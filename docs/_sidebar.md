@@ -67,6 +67,8 @@
 
 -----
 * [Chapter7：Node.js](ch7/nodeIntro.md)
+
+-----
 * [Chapter8：RESTful API](ch8/restApi.md)
 
 -----
