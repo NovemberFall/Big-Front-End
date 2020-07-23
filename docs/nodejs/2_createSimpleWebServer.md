@@ -15,6 +15,7 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-09-30-05-43-27.png)
 ---
 
@@ -36,6 +37,7 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-09-30-06-03-29.png)
 ![](img/2019-09-30-06-03-44.png)
 ---
@@ -45,6 +47,8 @@ server.listen(8000, '127.0.0.1', () => {
 
 ---
 - updating
+
+
 ```js
 //routing
 const fs = require('fs')
@@ -67,6 +71,7 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-09-30-07-49-31.png)
 ---
 ![](img/2019-09-30-07-50-07.png)
@@ -74,7 +79,10 @@ server.listen(8000, '127.0.0.1', () => {
 
 ---
 - if we comment this line 
+
 - `res.end('Hello from the server!')`
+
+
 ```js
 const server = http.createServer((req, res) => {
     const pathName = req.url;
@@ -92,11 +100,15 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-09-30-07-53-10.png)
+
 - it doesn't know what are u doing
 
 ---
 - update
+
+
 ```js
 const server = http.createServer((req, res) => {
     const pathName = req.url;
@@ -114,10 +126,13 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-09-30-07-57-40.png)
 ---
 
 - update
+
+
 ```js
 const server = http.createServer((req, res) => {
     const pathName = req.url;
@@ -132,14 +147,20 @@ const server = http.createServer((req, res) => {
     }
 })
 ```
+
 ![](img/2019-09-30-08-00-38.png)
 ---
+
 - open network
+
+
 ![](img/2019-09-30-08-00-58.png)
 ---
 
 ---
 - update
+
+
 ```js
 const server = http.createServer((req, res) => {
     const pathName = req.url;
@@ -161,6 +182,7 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-09-30-08-05-51.png)
 ---
 ![](img/2019-09-30-08-06-26.png)

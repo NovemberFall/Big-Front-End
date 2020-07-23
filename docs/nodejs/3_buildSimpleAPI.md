@@ -1,6 +1,8 @@
 ### build a very simple API
 
 - index.js
+
+
 ```js
 //Building a Simple API
 const fs = require('fs')
@@ -36,6 +38,7 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-09-30-08-33-34.png)
 ---
 ![](img/2019-09-30-08-34-09.png)
@@ -43,6 +46,8 @@ server.listen(8000, '127.0.0.1', () => {
 
 ---
 - updating
+
+
 ```js
 //Building a Simple API
 const fs = require('fs')
@@ -79,11 +84,15 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
+
 ![](img/2019-09-30-08-37-04.png)
 ---
 
 ---
 - version 2
+
+
 ```js
 //build simple api, version 2
 const fs = require('fs')
@@ -118,6 +127,8 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
+
 - this still work, the same result.
 
 ---
@@ -125,6 +136,8 @@ server.listen(8000, '127.0.0.1', () => {
 ### HTML Templating: Building the Templates (make a static html to be dynamic)
 
 - product.html
+
+
 ```html
 <body>
     <div class="container">
@@ -175,7 +188,9 @@ server.listen(8000, '127.0.0.1', () => {
     </div>
   </body>
 ```
+
 - now we replace that placeholder, with real piece of data
+
 
 ```html
  <body>
@@ -225,8 +240,10 @@ server.listen(8000, '127.0.0.1', () => {
 ![](img/2019-10-21-09-35-50.png)
 ---
 
-- delete <figure></figure> from teamplate-overview.html
+- delete `<figure></figure>` from teamplate-overview.html
 - replace template-overview.html with:
+
+
 ```html
   <body>
     <div class="container">
@@ -239,7 +256,10 @@ server.listen(8000, '127.0.0.1', () => {
   </body>
 </html>
 ```
+
 - updating template-card.html
+
+
 ```html
 <figure class="card">
     <div class="card__emoji">{%IMAGE%}{%IMAGE%}</div>
@@ -266,9 +286,12 @@ server.listen(8000, '127.0.0.1', () => {
     </a>
   </figure>
 ```
+
 ---
 ### HTML Templating: Filling the Templates
+
 - update index.js
+
 ```js
 //Filling the Templates
 const fs = require('fs')
@@ -334,7 +357,9 @@ server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 })
 ```
+
 ![](img/2019-10-21-10-26-42.png)
+
 ---
 
 
