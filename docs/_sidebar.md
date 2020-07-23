@@ -66,7 +66,24 @@
         * [1. online-chat](ch6/onlineChat.md)
 
 -----
-* [Chapter7：Node.js](ch7/nodeIntro.md)
+* [Chapter7：Node.js](nodejs/intro.md)
+    * [Introduction](nodejs/introduce.md)
+    * [1. read write file](nodejs/1_readWriteFile.md)
+    * [2. create simple web server](nodejs/2_createSimpleWebServer.md)
+    * [3. build simple API](nodejs/3_buildSimpleAPI.md)
+    * [6. building API](nodejs/6_building_API.md)
+    * [7. building API](nodejs/7_building_API.md)
+    * [8. building API](nodejs/8_building_API.md)
+    * [9. Middleware](nodejs/9_Middleware.md)
+    * [10. Chaining Multiple Middleware](nodejs/10_Chaining_Multiple_Middleware.md)
+    * [11. Environment Variables](nodejs/11_EnvironmentVariables.md)
+    * [12. MongoDB](nodejs/12_MongoDB.md)
+    * [13. MongoDB Mongoose](nodejs/13_MongoDB_Mongoose.md)
+    * [14. Refactoring for MVC](nodejs/14_Refactoring_for_MVC.md)
+    * [15. Modelling final Version Tours](nodejs/15_Modelling_finalVersion_Tours.md)
+    * [16. Making API better Advanced Filtering](nodejs/16_Making_API_Better_Advanced_Filtering.md)
+    * [nodejs Connect MySQL](nodejs/nodejsConnectMySQL.md)
+    * [nodeJs MySQL ](nodejs/nodeJsMysql.md)
 
 -----
 * [Chapter8：RESTful API](ch8/restApi.md)
