@@ -4,15 +4,21 @@
 
 
 ```js
+
 const fs = require('fs');
 //fs module stands for file system
 
 const textIn = fs.readFileSync('./txt/input.txt', 'utf-8')
 console.log(textIn)
+
 ```
 
+---
 
-`The avocado 🥑 is popular in vegetarian cuisine as a substitute for meats in sandwiches and salads because of its high fat content 😄`
+```
+The avocado 🥑 is popular in vegetarian cuisine as a substitute for meats in sandwiches 
+and salads because of its high fat content 😄
+```
 
 ---
 
