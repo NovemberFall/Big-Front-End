@@ -16,7 +16,6 @@ console.log(textIn)
 
 ---
 
----
 ### writting files
 
 ```js
@@ -36,7 +35,6 @@ console.log('File written')
 
 
 
----
 ### Reading and Writing Files Asynchronously
 
 ```js
