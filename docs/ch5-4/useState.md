@@ -116,12 +116,6 @@ export default Accordion;
 
 ![](img/2020-07-31-11-42-44.png)
 
----
-
-## Create Additional Widgets
-
-
-
 
 
 
