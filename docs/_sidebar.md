@@ -27,9 +27,6 @@
     * [ToDolist](ch3/Todo.md)
 
 -----
-* [Chapter4：PHP](ch4/phpIntro.md)
-
------
 * [Chapter5：React](ch5/reactIntro.md)
     * [React 中文教程](ch5/intro.md)
         * [1. react introduction](ch5/reactIntro.md)
@@ -49,6 +46,8 @@
         * [9. Building ListOfRecords](ch5-1/listOfRecords.md)
         * [10. UsingRef forDOM Acess](ch5-1/refForDomAcess.md)
         * [11. YouTubeBrowser App](ch5-1/youtube.md)
+    * [Hooks in React](ch5-4/intro.md)
+        * [1. React Hooks](ch5-4/hooks.md)
     * [Redux Course](ch5-2/intro.md)
         * [1. Mapping the Analogy to Redux](ch5-2/Analogy.md)
     * [Integrating React with Redux](ch5-3/intro.md)
