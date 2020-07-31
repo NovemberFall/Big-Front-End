@@ -55,6 +55,12 @@ const Accordion = ({ items }) => {
 ![](img/2020-07-31-11-06-12.png)
 
 
+---
 
+## Setter Function
+
+- `const [activeIndex, setActiveIndex] = useState(null);`
+  - Anytime we call `useState(null)`, we get back that array, 
+  - And the second argument inside of it is always going to be `setter`
 
 
