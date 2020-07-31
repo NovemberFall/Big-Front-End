@@ -285,6 +285,58 @@ export default Accordion;
 
 ## Introducing `useState`
 
+- before using `Hook system`, I want to show how we would approach this using simple class 
+  based component
+
+![](img/2020-07-31-09-59-21.png)
+![](img/2020-07-31-09-59-28.png)
+
+
+- update `Accordion.js`
+
+```js
+import React, { useState } from 'react';
+
+const Accordion = ({ items }) => {
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const onTitleClick = (index) => {
+        setActiveIndex(index);
+    }
+
+    const renderedItems = items.map((item, index) => {
+        return (
+            <React.Fragment key={item.title}>
+                <div className="title active"
+                    onClick={() => { onTitleClick(index) }}
+                >
+                    <i className="dropdown icon"></i>
+                    {item.title}
+                </div>
+
+                <div className="content active">
+                    <p>{item.content}</p>
+                </div>
+            </React.Fragment>
+        );
+    });
+
+    return (
+        <div className="ui styled accordion">
+            {renderedItems}
+            <h1>{activeIndex}</h1>
+        </div>
+    );
+};
+
+export default Accordion;
+```
+
+![](img/2020-07-31-10-47-28.png)
+
+
+
+
 
 
 

@@ -48,6 +48,7 @@
         * [11. YouTubeBrowser App](ch5-1/youtube.md)
     * [Hooks in React](ch5-4/intro.md)
         * [1. React Hooks](ch5-4/hooks.md)
+        * [2. Understanding useState](ch5-4/useState.md)
     * [Redux Course](ch5-2/intro.md)
         * [1. Mapping the Analogy to Redux](ch5-2/Analogy.md)
     * [Integrating React with Redux](ch5-3/intro.md)
