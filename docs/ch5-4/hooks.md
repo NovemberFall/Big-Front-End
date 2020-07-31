@@ -222,6 +222,69 @@ export default Accordion;
 ![](img/2020-07-31-00-49-19.png)
 
 
+- update `Accordion.js`
+
+```js
+import React, { Component } from 'react';
+
+// class Accordion extends Component{
+//     onTitleClick() {
+//         console.log('title was clicked');
+//     }
+//     render() {
+        
+//     }
+// }
+
+
+const Accordion = ({ items }) => {
+    const onTitleClick = (index) => { 
+        console.log('Title clicked', index);
+    }
+
+    const renderedItems = items.map((item, index) => {
+        return (
+            <React.Fragment key={item.title}>
+                <div className="title active"
+                    onClick={() => { onTitleClick(index) } }
+                >
+                    <i className="dropdown icon"></i>
+                    {item.title}
+                </div>
+
+                <div className="content active">
+                    <p>{item.content}</p>
+                </div>
+            </React.Fragment>
+        );
+    });
+
+    return <div className="ui styled accordion">{renderedItems}</div>;
+};
+
+export default Accordion;
+```
+
+- the problem is why we using `onClick={() => { onTitleClick(index) } ` arrow function?
+
+- if we just write `onClick={ onTitleClick(index) }`, then `onTitleClick(index)` is going to 
+  be invoked the instant that our list of items is rendered. 就是说，网页上的内容会立刻全部渲染
+  出来，而不是一个一个标题被绑定， 点击某一个才渲染的效果。
+
+- Anyway, if we use arrow function here, then we can `bind(this)`, you click a title, then
+  it just render one title
+
+
+![](img/2020-07-31-09-46-50.png)
+
+---
+
+- we need to make use of the **Hook's state system** to somehow keep track of which of these
+  elements should be `expanded` and `collapsed`[kəˈlæpst].
+
+
+## Introducing `useState`
+
 
 
 
