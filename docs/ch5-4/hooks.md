@@ -187,10 +187,39 @@ export default Accordion;
 
 ## Helper Functions in Function Components
 
+- update `Accordion.js`
+
+```js
+import React from 'react';
+
+const Accordion = ({ items }) => {
+    const renderedItems = items.map((item, index) => {
+        return (
+            <React.Fragment key={item.title}>
+                <div className="title active"
+                    onClick={() => { console.log("Title clicked", index) }}
+                >
+                    <i className="dropdown icon"></i>
+                    {item.title}
+                </div>
+
+                <div className="content active">
+                    <p>{item.content}</p>
+                </div>
+            </React.Fragment>
+        );
+    });
+
+    return <div className="ui styled accordion">{renderedItems}</div>;
+};
+
+export default Accordion;
+```
 
 
 
 
+![](img/2020-07-31-00-49-19.png)
 
 
 
