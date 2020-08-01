@@ -38,16 +38,110 @@
 
 ## Scaffolding(脚手架) [ˈskæfəldɪŋ]  the Widget
 
+- create `components/Search.js`
+
+```js
+import React from 'react';
+
+const Search = () => {
+    return <h1>Search</h1>;
+};
+
+export default Search;
+```
+
+- update `App`
+
+```js
+import React from 'react';
+
+import Search from './components/Search';
+
+export default () => {
+    return (
+        <div>
+            {/* <Accordion items={items} /> */}
+            <Search />
+        </div>
+    );
+};
+```
+
+![](img/2020-07-31-13-31-28.png)
+
+
+---
+
+## Text Inputs with Hooks
+
+- update `Search.js`
+
+```js
+import React from 'react';
+
+const Search = () => {
+    return (
+        <div>
+            <div className="ui form">
+                <div className="field">
+                    <label>Enter Search Term</label>
+                    <input className="input" />
+                </div>
+            </div>
+        </div>
+    );
+};
+export default Search;
+```
+
+![](img/2020-07-31-13-35-59.png)
+
+
+---
+
+## Text Inputs with Hooks
+
+- update Search.js
+
+```js
+import React, { useState } from 'react';
+
+const Search = () => {
+    const [term, setTerm] = useState('');
+
+    return (
+        <div>
+            <div className="ui form">
+                <div className="field">
+                    <label>Enter Search Term</label>
+                    <input
+                        value={term}
+                        onChange={(e) => setTerm(e.target.value)}
+                        className="input"
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};
+export default Search;
+```
+
+![](img/2020-07-31-13-45-33.png)
+
+---
+
+## When do we Search?
+
+## The useEffect Hook
+
+![](img/2020-07-31-13-52-39.png)
+
+![](img/2020-07-31-17-55-20.png)
 
 
 
-
-
-
-
-
-
-
+## Testing Exceution
 
 
 
