@@ -50,6 +50,7 @@
         * [1. React Hooks](ch5-4/hooks.md)
         * [2. Understanding useState](ch5-4/useState.md)
         * [3. Create Additional Widgets](ch5-4/widgets.md)
+        * [4. Async Code in useEffect](ch5-4/widgets1.md)
     * [Redux Course](ch5-2/intro.md)
         * [1. Mapping the Analogy to Redux](ch5-2/Analogy.md)
     * [Integrating React with Redux](ch5-3/intro.md)
