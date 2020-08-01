@@ -143,7 +143,87 @@ export default Search;
 
 ## Testing Exceution
 
+- update `Search.js`
+
+```js
+import React, { useState, useEffect } from 'react';
+
+const Search = () => {
+    const [term, setTerm] = useState('');
+
+    console.log('I RUN WITH EVERY RENDER');
+
+    useEffect(() => {
+        console.log('I ONLY RUN ONCE');
+    }, []);
+
+    return (
+        <div>
+            <div className="ui form">
+                <div className="field">
+                    <label>Enter Search Term</label>
+                    <input
+                        value={term}
+                        onChange={(e) => setTerm(e.target.value)}
+                        className="input"
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};
+export default Search;
+```
+
+![](img/2020-07-31-18-16-35.png)
 
 
+- if we don't passing any `[]` param
 
+```js
+const Search = () => {
+    const [term, setTerm] = useState('');
+
+    console.log('I RUN WITH EVERY RENDER');
+
+    useEffect(() => {
+        console.log('I RUN AFTER EVERY RENDER AND AT INITIAL RENDER');
+    });
+
+    return (
+        <div>
+            <div className="ui form">
+                <div className="field">
+                    <label>Enter Search Term</label>
+                    <input
+                        value={term}
+                        onChange={(e) => setTerm(e.target.value)}
+                        className="input"
+                    />
+                </div>
+            </div>
+        </div>
+    );
+};
+export default Search;
+```
+
+![](img/2020-07-31-18-19-02.png)
+
+- if passing an `[]` array param
+
+```js
+    useEffect(() => {
+        console.log('I RUN AFTER EVERY RENDER AND AT INITIAL RENDER');
+    }, [term]);
+```
+
+![](img/2020-07-31-18-21-16.png)
+
+
+---
+
+## Quiz
+
+![](img/2020-07-31-18-27-38.png)
 
