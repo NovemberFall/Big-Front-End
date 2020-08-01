@@ -279,6 +279,30 @@ export default Search;
 
 ![](img/2020-07-31-22-42-09.png)
 
+---
+
+## Reminder on setTimeOut
+
+![](img/2020-07-31-23-01-51.png)
+
+![](img/2020-07-31-23-02-55.png)
+
+---
+
+## useEffect's cleanup function
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
