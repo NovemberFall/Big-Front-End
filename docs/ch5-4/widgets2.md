@@ -267,9 +267,21 @@ export default Dropdown;
 
 ![](img/2020-08-02-10-05-06.png)
 
+![](img/2020-08-02-10-37-15.png)
 
+![](img/2020-08-02-10-42-16.png)
 
+- First, try to set up an event listener on the body element without using react
 
+![](img/2020-08-02-10-47-27.png)
+
+- click `label`, `body`, everywhere, you see the result.
+
+---
+
+## Binding an Event Handler
+
+- we use `useEffect` and `useState` to make sure this thing only runs once
 
 
 
