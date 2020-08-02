@@ -263,6 +263,10 @@ export default Dropdown;
 
 ---
 
+## Reminder on Event Bubbling
+
+![](img/2020-08-02-10-05-06.png)
+
 
 
 
