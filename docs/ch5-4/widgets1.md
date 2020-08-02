@@ -292,10 +292,107 @@ export default Search;
 ## useEffect's cleanup function
 
 
+- update `search.js`
+
+```js
+    useEffect(() => {
+        console.log('Initial render or term was changed');
+        return () => {
+            console.log('CLEANUP');
+        };
+    }, [term]);
+```
+
+ ![](img/2020-08-01-16-25-07.png)
+
+ ![](img/2020-08-01-16-27-40.png)
+
+ ![](img/2020-08-01-16-28-00.png)
 
 
+---
+
+## Implementing a Delayed Request
+
+- update `Search.js`
+
+- we add a `cleanup` function
+
+```js
+    useEffect(() => {
+        const search = async () => {
+            const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
+                params: {
+                    action: 'query',
+                    list: 'search',
+                    origin: '*',
+                    format: 'json',
+                    srsearch: term
+                }
+            });
+            setResults(data.query.search);
+        };
+
+        const timeoutId = setTimeout(() => {
+            if (term) {
+                search();
+            }
+        }, 500);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [term]);
+```
+
+![](img/2020-08-01-16-35-29.png)
 
 
+![](img/2020-08-01-16-37-06.png)
+
+- this time, we don't see any request issue until after I typed out last character
+  And five hundred milliseconds elapse.
+
+- 因为这次，我们添加了 `cleanUp` function 
+
+---
+
+## Searching on initial Render
+
+- update `search.js`
+
+```js
+    useEffect(() => {
+        const search = async () => {
+            const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
+                params: {
+                    action: 'query',
+                    list: 'search',
+                    origin: '*',
+                    format: 'json',
+                    srsearch: term
+                }
+            });
+            setResults(data.query.search);
+        };
+
+        if (term && !results.length) {
+            search();
+        } else {
+            const timeoutId = setTimeout(() => {
+                if (term) {
+                    search();
+                }
+            }, 1000);
+
+            return () => {
+                clearTimeout(timeoutId);
+            };
+        }
+    }, [term]);
+```
+
+![](img/2020-08-01-17-05-57.png)
 
 
 
