@@ -283,15 +283,92 @@ export default Dropdown;
 
 - we use `useEffect` and `useState` to make sure this thing only runs once
 
+- update `Dropdown.js`
 
+```js
+import React, { useState, useEffect } from 'react';
 
+const Dropdown = ({ options, selected, onSelectedChange }) => {
+    const [open, setOpen] = useState(false);
 
+    useEffect(() => {
+        document.body.addEventListener('click', () => {
+            console.log('BODY CLICK!!!');
+            setOpen(false);
+        });
+    }, []);
 
+    if (options.value === selected.value) {
+        return null;
+    }
 
+    const renderedOptions = options.map((option) => {
+        return (
+            <div
+                key={option.value}
+                className="item"
+                onClick={() => {
+                    console.log('ITEM CLICKED');
+                    onSelectedChange(option);
+                }}
+            >
+                {option.label}
+            </div>
+        );
+    });
+    return (
+        <div className="ui form">
+            <div className="field">
+                <label className="label">Select a Color</label>
+                <div
+                    onClick={() => {
+                        console.log('DROPDOWN CLICKED');
+                        setOpen(!open);
+                    }}
+                    className={`ui selection dropdown ${open ? 'visible active' : ''}`}
+                >
+                    <i className="dropdown icon"></i>
+                    <div className="text">{selected.label}</div>
+                    <div className={`menu ${open ? 'visible transition' : ''}`}>
+                        {renderedOptions}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+export default Dropdown;
+```
 
+![](img/2020-08-02-11-27-17.png)
 
+- 因为，`BODY CLICK` 总是初始化时候就渲染，紧接着点击 item, 最后是 Dropdown
 
+---
 
+## Which Element Was Clicked?
+
+![](img/2020-08-02-11-31-38.png)
+
+![](img/2020-08-02-11-32-24.png)
+
+- `Dropdown.js`
+
+```js
+const Dropdown = ({ options, selected, onSelectedChange }) => {
+    const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.addEventListener('click', (event) => {
+            // console.log('BODY CLICK!!!');
+            console.log(event.target);
+            setOpen(false);
+        });
+    }, []);
+
+```
+
+![](img/2020-08-02-11-35-58.png)
 
 
 
