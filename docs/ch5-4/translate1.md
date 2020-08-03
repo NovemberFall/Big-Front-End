@@ -126,8 +126,103 @@ export default Convert;
 
 ![](img/2020-08-02-20-31-00.png)
 
+---
+
+## Displaying Translated Text
+
+- update `Convert.js`
+
+```js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const Convert = ({ language, text }) => {
+    const [translated, setTranslated] = useState('');
+
+    useEffect(() => {
+        const doTranslation = async () => {
+            const { data } = await axios.post('https://translation.googleapis.com/language/translate/v2',
+                {},
+                {
+                    params: {
+                        q: text,
+                        target: language.value,
+                        key: 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM'
+                    }
+                }
+            );
+            setTranslated(data.data.translations[0].translatedText);
+        };
+
+        doTranslation();
+    }, [language, text]);
+
+    return (
+        <div>
+            <h1 className="ui header">{translated}</h1>
+        </div>
+    );
+};
+export default Convert;
+```
+
+![](img/2020-08-02-20-55-59.png)
+
+---
+
+## Debouncing(消除抖动) Translation Updates
+
+![](img/2020-08-02-21-01-42.png)
+
+- update `Convert.js`
+
+```js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const Convert = ({ language, text }) => {
+    const [translated, setTranslated] = useState('');
+    const [debouncedText, setDebouncedText] = useState(text);
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            setDebouncedText(text);
+        }, 500);
+
+        return () => {
+            clearTimeout(timerId);
+        }
+    }, [text]);
+
+    useEffect(() => {
+        const doTranslation = async () => {
+            const { data } = await axios.post('https://translation.googleapis.com/language/translate/v2',
+                {},
+                {
+                    params: {
+                        q: debouncedText,
+                        target: language.value,
+                        key: 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM'
+                    }
+                }
+            );
+            setTranslated(data.data.translations[0].translatedText);
+        };
+
+        doTranslation();
+    }, [language, debouncedText]);
+
+    return (
+        <div>
+            <h1 className="ui header">{translated}</h1>
+        </div>
+    );
+};
+
+export default Convert;
+```
 
 
+![](img/2020-08-02-21-28-25.png)
 
-
-
+- 现在可以看到已经不再连续请求，消除抖动
