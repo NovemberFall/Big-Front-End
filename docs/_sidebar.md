@@ -60,6 +60,7 @@
         * [6. Dropdown Architecture | useRef](ch5-4/widgets3.md)
         * [7. The Translate Widget](ch5-4/translate.md)
         * [8. Building the Convert Component | Google translate API](ch5-4/translate1.md)
+        * [9. Navigation From Scratch](ch5-4/navigation.md)
     * [Redux Course](ch5-2/intro.md)
         * [1. Mapping the Analogy to Redux](ch5-2/Analogy.md)
     * [Integrating React with Redux](ch5-3/intro.md)
