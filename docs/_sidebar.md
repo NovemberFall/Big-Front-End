@@ -1,7 +1,7 @@
 * [Chapter1：HTML/CSS](ch1/htmlIntroduction.md)
 
 -----
-* [Chapter2：JS project](ch2/jsIntro.md)
+* [Chapter2：JS project 中文教程](ch2/jsIntro.md)
     * [canvas_music_visualization](ch2/intro.md)
         * [1. get && play](ch2/getMusic_play.md)
     * [toto-list](ch2/todo.md)
@@ -125,3 +125,7 @@
             * [import bootstrap library](ch11/bootstrap.md)
             * [FileSearch Component 1](ch11/fileSearch1.md)
             * [FileSearch Component 2](ch11/fileSearch2.md)
+
+-----
+* [Chapter10：Angular](angular/intro.md)
+    * [Angular2 | Project Set Up](angular/version.md)

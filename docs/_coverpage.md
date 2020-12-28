@@ -11,7 +11,7 @@
 - jQuery
 - React
 - Vue
-- SpringBoot
+- Angular
 
 [GitHub](https://github.com/NovemberFall)
 [Get Started](README.md)
