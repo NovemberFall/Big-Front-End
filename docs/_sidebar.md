@@ -34,14 +34,16 @@
     * [Redux 中文教程](reduxCHN/intro.md)
         * [1. Redux 入门](reduxCHN/reduxIntro.md)
         * [2. Redux Advanced](reduxCHN/reduxAdvance.md)
-    * [React Bootcamp](reactCamp/intro.md)
-        * [1. Setup](reactCamp/setup.md)
-        * [2. Components Props && PropTyeps I](reactCamp/props.md)
-        * [3. Components Props && PropTyeps II](reactCamp/props1.md)
-        * [4. Events & Search Component](reactCamp/event.md)
 
 -----
-* [React II](ch5-1/intro.md)
+* [React II](reactCamp/intro.md)
+    * [1. Setup](reactCamp/setup.md)
+    * [2. Components Props && PropTyeps I](reactCamp/props.md)
+    * [3. Components Props && PropTyeps II](reactCamp/props1.md)
+    * [4. Events & Search Component](reactCamp/event.md)
+
+-----
+* [React III](ch5-1/intro.md)
     * [1. Setup](ch5-1/setup.md)
     * [2. BuildingContent With JSX](ch5-1/jsx.md)
     * [3. Communicating with Props](ch5-1/props.md)
