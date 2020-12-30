@@ -38,8 +38,50 @@
 
 ---
 
-### first project
+### first project 旧版本
 
+- create first project `hello`, create a folder `js`, 把旧版本三个文件放入文件夹
+- create folder `01_hello`, create a hello.html
 
+- 同时，记得在html 中先引入核心库，再引入扩展库。
 
+---
 
+- hello.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+
+    <!-- import core lirbary -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+
+    <!-- import react-dom, is used to support react to operation on DOM -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+
+    <!-- import babel, jsx => js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+    <script type="text/babel">
+        //1. create virtual DOM
+        const VDOM = <h1>Hello, React</h1> //不要引号，因为不是string
+
+        //2. render virtual DOM to web page
+        // ReactDOM.render(virtual DOM, Container)
+        ReactDOM.render(VDOM, document.getElementById('test'))
+    </script>
+    
+</body>
+</html>
+```
+
+![](img/2020-12-29-20-01-49.png)
