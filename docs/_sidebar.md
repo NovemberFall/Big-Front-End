@@ -27,13 +27,16 @@
     * [ToDolist](ch3/Todo.md)
 
 -----
-* [React I](ch5/reactIntro.md)
+* [React 中文教程 PartA](ch5/reactIntro.md)
     * [React 中文教程](ch5/intro.md)
         * [1. react introduction](ch5/reactIntro.md)
         * [2. react Advanced](ch5/advanced.md)
     * [Redux 中文教程](reduxCHN/intro.md)
         * [1. Redux 入门](reduxCHN/reduxIntro.md)
         * [2. Redux Advanced](reduxCHN/reduxAdvance.md)
+
+-----
+* [React 中文教程 PartB](reactCN/intro.md)
 
 -----
 * [React II](reactCamp/intro.md)
