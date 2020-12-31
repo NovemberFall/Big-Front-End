@@ -40,6 +40,8 @@
     * [ch1: Virtual DOM 的两种创建方式](reactCN/vir.md)
     * [jsx 语法规则](reactCN/jsx.md)
     * [组件与模块](reactCN/component.md)
+    * [ch2: React面向组件编程](reactCN/develop.md)
+    * [复习一下 class](reactCN/class.md)
   
 -----
 * [React II](reactCamp/intro.md)
