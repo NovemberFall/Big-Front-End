@@ -37,7 +37,9 @@
 
 -----
 * [React 中文教程 PartB](reactCN/intro.md)
-
+    * [Virtual DOM 的两种创建方式](reactCN/vir.md)
+    * [jsx 语法规则](reactCN/jsx.md)
+  
 -----
 * [React II](reactCamp/intro.md)
     * [1. Setup](reactCamp/setup.md)
