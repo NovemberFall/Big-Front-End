@@ -233,6 +233,7 @@
                 //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
                 //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
                 console.log(this.state.isHot)
+                console.log(this)
             }
         }
 
@@ -248,9 +249,49 @@
 </html>
 ```
 
+- 主意这样写，依旧是undefine
+
+![](img/2021-01-01-10-04-28.png)
+
+- 所以加上这句话： `this.changeWeather = this.changeWeather.bind(this);`
 
 
+```html
+    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+    <script type="text/babel">
+        //1. create 组件
+        class Weather extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {isHot: false}
+                this.changeWeather = this.changeWeather.bind(this);
+            }
+            render(){
+                // console.log(this)
+                const {isHot} = this.state;
+                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+                return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+            }
+            
+            changeWeather(){
+                //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
+                //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
+                //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
+                console.log(this.state.isHot)
+                console.log(this)
+            }
+        }
 
+        //2. render 组件到页面
+        // ReactDOM.render(class component, Container)
+        ReactDOM.render(<Weather/>, document.getElementById('test'))
+
+        // const w = new Weather();
+        // w.changeWeather();
+    </script>
+```
+
+![](img/2021-01-01-10-05-12.png)
 
 
 
