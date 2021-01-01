@@ -46,6 +46,7 @@
     * [state的理解](reactCN/state.md) 
     * [初始化state](reactCN/state1.md) 
     * [state 的简写](reactCN/state2.md) 
+    * [props 的基本使用](reactCN/props.md) 
   
 -----
 * [React II](reactCamp/intro.md)
