@@ -43,6 +43,8 @@
     * [ch2: React面向组件编程](reactCN/develop.md)
     * [复习一下 class](reactCN/class.md)
     * [类式组件](reactCN/class1.md) 
+    * [state的理解](reactCN/state.md) 
+    * [初始化state](reactCN/state1.md) 
   
 -----
 * [React II](reactCamp/intro.md)
