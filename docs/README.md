@@ -34,3 +34,8 @@ https://novemberfall.github.io/programming
 ## Python
 
 https://novemberfall.github.io/Python-100days/
+
+
+## MySQL NoSQL
+
+https://novemberfall.github.io/sql/

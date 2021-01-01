@@ -42,6 +42,7 @@
     * [组件与模块](reactCN/component.md)
     * [ch2: React面向组件编程](reactCN/develop.md)
     * [复习一下 class](reactCN/class.md)
+    * [类式组件](reactCN/class1.md) 
   
 -----
 * [React II](reactCamp/intro.md)
