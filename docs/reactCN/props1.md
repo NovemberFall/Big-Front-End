@@ -91,12 +91,27 @@
             })
         }
         console.log(sum(1, 2, 3, 4, 5, 6));
+
+			//构造字面量对象时使用展开语法
+			let person = {name:'tom',age:18}
+			let person2 = {...person} //克隆后的对象
+			//console.log(...person); //报错，展开运算符不能展开对象
+			person.name = 'jerry'
+			console.log(person2);
+			console.log(person);
+
+			//合并
+			let person3 = {...person,name:'jack',address:"地球"}
+			console.log(person3);
     </script>
 </body>
 </html>
 ```
 
 ![](img/2021-01-01-13-46-10.png)
+
+
+---
 
 
 
