@@ -76,6 +76,8 @@
 </html>
 ```
 
+- 对Person.propType 进行限制，但是放在Person类的外面，这样其实不太好，最好的做法是把它的现在放在class 内部, 加上static 关键字。
+
 
 
 

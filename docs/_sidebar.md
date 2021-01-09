@@ -49,6 +49,9 @@
     * [props 的基本使用](reactCN/props.md) 
     * [批量传递 props](reactCN/props1.md) 
     * [对 props 进行限制](reactCN/props2.md) 
+    * [props 的简写方式](reactCN/props3.md) 
+    * [class中 static 关键字](reactCN/static.md) 
+    * [函数组件使用 props](reactCN/props4.md) 
   
 -----
 * [React II](reactCamp/intro.md)
