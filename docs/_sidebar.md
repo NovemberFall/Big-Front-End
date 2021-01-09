@@ -48,6 +48,7 @@
     * [state 的简写](reactCN/state2.md) 
     * [props 的基本使用](reactCN/props.md) 
     * [批量传递 props](reactCN/props1.md) 
+    * [对 props 进行限制](reactCN/props2.md) 
   
 -----
 * [React II](reactCamp/intro.md)
