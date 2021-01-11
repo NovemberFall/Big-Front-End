@@ -52,6 +52,7 @@
     * [props 的简写方式](reactCN/props3.md) 
     * [class中 static 关键字](reactCN/static.md) 
     * [函数组件使用 props](reactCN/props4.md) 
+    * [组件三大核心属性3:refs 与事件处理](reactCN/refs.md)
   
 -----
 * [React II](reactCamp/intro.md)
