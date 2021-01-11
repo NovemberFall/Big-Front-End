@@ -54,6 +54,7 @@
         * [函数组件使用 props](reactCN/props4.md) 
     * [组件三大核心属性3:refs 与事件处理](reactCN/refs.md)
         * [callback 形式的ref](reactCN/refs1.md)
+        * [回调ref中调用次数的问题](reactCN/refs2.md)
   
 -----
 * [React II](reactCamp/intro.md)
