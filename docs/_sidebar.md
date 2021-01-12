@@ -59,6 +59,7 @@
     * [React中的事件处理](reactCN/event.md)
     * [非受控组件，收集表单中的数据](reactCN/event1.md)
     * [受控组件, 推荐使用](reactCN/event2.md)
+    * [高阶函数_函数柯里化](reactCN/fun.md)
   
 -----
 * [React II](reactCamp/intro.md)
