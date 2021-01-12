@@ -56,6 +56,9 @@
         * [callback 形式的ref](reactCN/refs1.md)
         * [回调ref中调用次数的问题](reactCN/refs2.md)
         * [createRef 的使用](reactCN/refs3.md)
+    * [React中的事件处理](reactCN/event.md)
+    * [非受控组件，收集表单中的数据](reactCN/event1.md)
+    * [受控组件, 推荐使用](reactCN/event2.md)
   
 -----
 * [React II](reactCamp/intro.md)
