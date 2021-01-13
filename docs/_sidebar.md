@@ -60,6 +60,8 @@
     * [非受控组件，收集表单中的数据](reactCN/event1.md)
     * [受控组件, 推荐使用](reactCN/event2.md)
     * [高阶函数_函数柯里化](reactCN/fun.md)
+    * [高阶函数_不用函数柯里化](reactCN/fun1.md)
+    * [最重要的概念：组件的生命周期](reactCN/life.md)
   
 -----
 * [React II](reactCamp/intro.md)
