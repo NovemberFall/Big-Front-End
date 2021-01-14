@@ -62,7 +62,8 @@
     * [高阶函数_函数柯里化](reactCN/fun.md)
     * [高阶函数_不用函数柯里化](reactCN/fun1.md)
     * [最重要的概念：组件的生命周期](reactCN/life.md)
-    * [生命周期(旧)， 组件挂载流程](reactCN/life1.md)
+        * [生命周期(旧)， 组件挂载流程](reactCN/life1.md)
+        * [生命周期(旧)， forceUpdate()](reactCN/life2.md)
   
 -----
 * [React II](reactCamp/intro.md)
