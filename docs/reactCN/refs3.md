@@ -69,7 +69,7 @@
 ---
 
 
-```jsx
+```js
 		//创建组件
 		class Demo extends React.Component{
 			/* 
@@ -105,7 +105,7 @@
 
 
 
-```jsx
+```js
 		//创建组件
 		class Demo extends React.Component{
 			/* 
@@ -144,7 +144,7 @@
 
 
 
-```jsx
+```js
 		//创建组件
 		class Demo extends React.Component{
 			/* 

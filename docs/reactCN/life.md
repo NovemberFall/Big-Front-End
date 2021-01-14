@@ -80,7 +80,7 @@
 
 ---
 
-```jsx
+```js
 		//创建组件
 		//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
 		class Life extends React.Component{
@@ -130,7 +130,7 @@
 
 ### 现在我们改进
 
-```jsx
+```js
 		//创建组件
 		//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
 		class Life extends React.Component{

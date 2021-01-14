@@ -18,7 +18,7 @@
 - 注意这里：
 
 
-```jsx
+```js
 		//#endregion
 		//创建组件
 		class Login extends React.Component{

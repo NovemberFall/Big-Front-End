@@ -80,7 +80,7 @@
 
 ---
 
-```jsx
+```js
 			render(){
 				const {isHot} = this.state
 				return(
