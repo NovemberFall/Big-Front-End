@@ -65,6 +65,8 @@
         * [生命周期(旧)， 组件挂载流程](reactCN/life1.md)
         * [生命周期(旧)， forceUpdate()](reactCN/life2.md)
         * [生命周期(旧)， 父组件render](reactCN/life3.md)
+    * [对比新旧生命周期](reactCN/life4.md)
+        * [getDerivedStateFromProps](reactCN/life5.md)
   
 -----
 * [React II](reactCamp/intro.md)

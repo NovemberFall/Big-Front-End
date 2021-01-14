@@ -1,0 +1,43 @@
+## getDerivedStateFromProps
+
+- 几乎 `getDerivedStateFromProps` 在未来开发，我们用不到它，但是我们还是要解释一下
+  - 因为它都不是一个实例的函数, 所以需要加上static 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
