@@ -64,6 +64,7 @@
     * [最重要的概念：组件的生命周期](reactCN/life.md)
         * [生命周期(旧)， 组件挂载流程](reactCN/life1.md)
         * [生命周期(旧)， forceUpdate()](reactCN/life2.md)
+        * [生命周期(旧)， 父组件render](reactCN/life3.md)
   
 -----
 * [React II](reactCamp/intro.md)
