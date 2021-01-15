@@ -1,4 +1,4 @@
-## getSnapshotBeforeUpdate 的案例
+## getSnapshotBeforeUpdate News滚动的案例
 
 - 尽管官方文档已经说了 非常少用 `getSnapshotBeforeUpdate`, 但我们还是要解释一下它的用法！
 
@@ -95,7 +95,7 @@
 
 ### 现在回到组件，来看react 的实现
 
-
+![](img/2021-01-15-10-57-22.png)
 
 
 
