@@ -67,6 +67,8 @@
         * [生命周期(旧)， 父组件render](reactCN/life3.md)
     * [对比新旧生命周期](reactCN/life4.md)
         * [getDerivedStateFromProps](reactCN/life5.md)
+        * [getSnapshotBeforeUpdate](reactCN/life6.md)
+        * [getSnapshotBeforeUpdate 的案例](reactCN/life7.md)
   
 -----
 * [React II](reactCamp/intro.md)
