@@ -36,7 +36,7 @@
         * [2. Redux Advanced](reduxCHN/reduxAdvance.md)
 
 -----
-* [React 中文教程 PartB](reactCN/intro.md)
+* [React 中文教程 基础分析](reactCN/intro.md)
     * [ch1: Virtual DOM 的两种创建方式](reactCN/vir.md)
     * [jsx 语法规则](reactCN/jsx.md)
     * [组件与模块](reactCN/component.md)
@@ -72,6 +72,10 @@
     * [DOM 的diffing 算法](reactCN/diff.md)
         * [diffing 总结](reactCN/diff1.md)
 
+-----
+* [React-scaffold 脚手架](reactCN/scaffold.md)
+    * [react 插件安装](reactCN/plugin.md)
+  
 -----
 * [React II](reactCamp/intro.md)
     * [1. Setup](reactCamp/setup.md)
