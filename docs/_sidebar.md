@@ -74,6 +74,7 @@
 
 -----
 * [React-scaffold 脚手架](reactCN/scaffold.md)
+    * [react 一个简单hello 组件](reactCN/hello.md)
     * [react 插件安装](reactCN/plugin.md)
   
 -----
