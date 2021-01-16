@@ -1,16 +1,24 @@
 ## Using 3rd-Party Middleware
+
 #### `Morgan` which is a very popular logging middleware
+
 - let's install it
+
 - `npm i morgan `
+
 ![](img/2019-12-18-13-22-09.png)
 ![](img/2019-12-18-13-23-17.png)
+
 - now we installed it.
 
 - input `morgan github` on browser
 - click index.js
 - see the morgan function
+
 ![](img/2019-12-18-13-31-00.png)
+
 - inside morgan function, it return:
+
 ```js
 return function logger (req, res, next) {
     // request data
@@ -54,10 +62,15 @@ return function logger (req, res, next) {
     }
 
     next()
-  }
 }
 ```
+
+---
+
 - now let's use morgan function to test middleware (app.js)
+
+
+
 ```js
 //Using 3rd-Party Middleware ----- morgan
 const fs = require('fs');
@@ -80,18 +93,24 @@ app.use((req, res, next) => {
     next();
 });
 ```
+
 ![](img/2019-12-18-13-35-35.png)
 ![](img/2019-12-18-13-35-49.png)
+
 - we get the above info `GET /api/v1/tours 200 3.354 ms - 8744`
 - we also can test 404
+
 ![](img/2019-12-18-14-25-53.png)
 ![](img/2019-12-18-14-26-07.png)
+
 ---
 
 
 
 ## Implementing the Users Rotues
+
 - create a new app2.js
+
 ```js
 const getAllUsers = (req, res) => {
     res.status(500).json({
@@ -164,11 +183,15 @@ app.listen(port, () => {
     console.log(`${__dirname}`)
 });
 ```
+
 ![](img/2019-12-19-13-45-21.png)
+
 ---
 
 ## Creating and Mounting Multiple Routers
+
 - update app2.js
+
 ```js
 //Creating and Mounting Multiple Routers
 const fs = require('fs');
@@ -361,18 +384,27 @@ app.listen(port, () => {
     console.log(`${__dirname}`)
 });
 ```
+
+
 ![](img/2019-12-19-14-32-02.png)
+
 - done!
+
 ---
 
 
 
 ## A Better File Structure
+
 ### create a new folder `router`
+
 ![](img/2019-12-19-15-08-54.png)
 ![](img/2019-12-19-15-10-51.png)
+
 - we need to change path since we change the tourRoutes's path
+
 ### 4-NATOURS/routes/tourRoutes.js
+
 ```js
 const express = require('express');
 const fs = require('fs');
@@ -480,8 +512,11 @@ router.route('/:id')
 
 module.exports = router;
 ```
+
 ---
+
 ### 4-NATOURS/routes/userRoutes.js
+
 ```js
 const express = require('express');
 
@@ -533,10 +568,15 @@ router.route('/:id')
 
 module.exports = router;
 ```
+
+
 ---
 
 
 ### app2.js
+
+
+
 ```js
 //A Better File Structure
 const express = require('express');
@@ -687,7 +727,14 @@ exports.deleteTour = (req, res) => {
     });
 };
 ```
+
+---
+
+
 #### `routes/tourRoutes.js`
+
+
+
 ```js
 // const express = require('express');
 
@@ -730,8 +777,13 @@ router.route('/:id')
 
 module.exports = router;
 ```
+
+
+
 ![](img/2019-12-19-15-47-09.png)
+
 - still work!
+
 ---
 
 
@@ -744,6 +796,8 @@ module.exports = router;
 
 
 #### `controllers/userController.js`
+
+
 ```js
 
 exports.getAllUsers = (req, res) => {
@@ -800,12 +854,20 @@ router.route('/:id')
 
 module.exports = router;
 ```
+
+
+
 ![](img/2019-12-19-15-52-41.png)
+
 - done!
+
 ---
 
 
 ## Create server.js file
+
+
+
 ```js
 const app = require('./app2');
 const port = 3000;
@@ -814,7 +876,11 @@ app.listen(port, () => {
     console.log(`${__dirname}`)
 });
 ```
+
+
 ### change app2.js's codes
+
+
 ```js
 //A Better File Structure
 const express = require('express');
@@ -853,7 +919,15 @@ app.use('/api/v1/users', userRouter);
 
 module.exports = app;   
 ```
+
+
+
 ### let's correct package.json
+
 ![](img/2019-12-19-16-05-47.png)
+
+
 ### now we can run `npm start`
+
+
 ![](img/2019-12-19-16-07-04.png)
