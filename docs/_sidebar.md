@@ -69,7 +69,9 @@
         * [getDerivedStateFromProps](reactCN/life5.md)
         * [getSnapshotBeforeUpdate](reactCN/life6.md)
         * [getSnapshotBeforeUpdate News滚动的案例](reactCN/life7.md)
-  
+    * [DOM 的diffing 算法](reactCN/diff.md)
+        * [diffing 总结](reactCN/diff1.md)
+
 -----
 * [React II](reactCamp/intro.md)
     * [1. Setup](reactCamp/setup.md)
