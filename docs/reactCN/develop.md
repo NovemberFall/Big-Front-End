@@ -5,16 +5,16 @@
 - 先学函数式编程
 
 ```html
-    <script type="text/babel">
-        //1. create 函数式组件
-        function demo(){
-            return <h2>我是用函数定义的组件(适用于简单组件的定义)</h2>
-        }
+<script type="text/babel">
+    //1. create 函数式组件
+    function demo(){
+        return <h2>我是用函数定义的组件(适用于简单组件的定义)</h2>
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(function(), Container)
-        ReactDOM.render(demo, document.getElementById('test'))
-    </script>
+    //2. render 组件到页面
+    // ReactDOM.render(function(), Container)
+    ReactDOM.render(demo, document.getElementById('test'))
+</script>
 ```
 
 ![](img/2020-12-30-21-20-06.png)
@@ -22,17 +22,17 @@
 - 可以发现报错，就是说
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 函数式组件
-        function Demo(){
-            return <h2>我是用函数定义的组件(适用于简单组件的定义)</h2>
-        }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 函数式组件
+    function Demo(){
+        return <h2>我是用函数定义的组件(适用于简单组件的定义)</h2>
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(function(), Container)
-        ReactDOM.render(<Demo/>, document.getElementById('test'))
-    </script>
+    //2. render 组件到页面
+    // ReactDOM.render(function(), Container)
+    ReactDOM.render(<Demo/>, document.getElementById('test'))
+</script>
 ```
 
 - 主意函数第一个字要大写

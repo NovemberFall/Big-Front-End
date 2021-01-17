@@ -176,16 +176,16 @@
 
 
 ```html
-    <!-- type="text/javascript" 表示现在这里写的是js -->
-    <script type="text/javascript">
-        //1. create virtual DOM
-        //React.creatElement(标签名，标签属性，标签内容)
-        const VDOM = React.createElement('h1', {id:'title'}, React.createElement('span', {}, 'Hello, React'));
+<!-- type="text/javascript" 表示现在这里写的是js -->
+<script type="text/javascript">
+    //1. create virtual DOM
+    //React.creatElement(标签名，标签属性，标签内容)
+    const VDOM = React.createElement('h1', {id:'title'}, React.createElement('span', {}, 'Hello, React'));
 
-        //2. render virtual DOM to web page
-        // ReactDOM.render(virtual DOM, Container)
-        ReactDOM.render(VDOM, document.getElementById('test'))
-    </script>
+    //2. render virtual DOM to web page
+    // ReactDOM.render(virtual DOM, Container)
+    ReactDOM.render(VDOM, document.getElementById('test'))
+</script>
 ```
 
 ![](img/2020-12-30-15-36-38.png)
@@ -194,38 +194,38 @@
 ### 但是我们可以这样写 jsx 的dom结构：
 
 ```html
-    <!-- import babel, jsx => js -->
-    <script type="text/javascript" src="../js/babel.min.js"></script>
+<!-- import babel, jsx => js -->
+<script type="text/javascript" src="../js/babel.min.js"></script>
 
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create virtual DOM
-        const VDOM = ( //不要引号，因为不是string
-            <h1 id="title">
-                <span>Hello, React</span>
-            </h1> 
-        )
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create virtual DOM
+    const VDOM = ( //不要引号，因为不是string
+        <h1 id="title">
+            <span>Hello, React</span>
+        </h1> 
+    )
 
-        //2. render virtual DOM to web page
-        // ReactDOM.render(virtual DOM, Container)
-        ReactDOM.render(VDOM, document.getElementById('test'))
-    </script>
+    //2. render virtual DOM to web page
+    // ReactDOM.render(virtual DOM, Container)
+    ReactDOM.render(VDOM, document.getElementById('test'))
+</script>
 ```
 
 - 但是问题来了，浏览器不认识这种写法，所以我们import 了 babel
 - 它最终被翻译成了：
 
 ```html
-    <!-- type="text/javascript" 表示现在这里写的是js -->
-    <script type="text/javascript">
-        //1. create virtual DOM
-        //React.creatElement(标签名，标签属性，标签内容)
-        const VDOM = React.createElement('h1', {id:'title'}, React.createElement('span', {}, 'Hello, React'));
+<!-- type="text/javascript" 表示现在这里写的是js -->
+<script type="text/javascript">
+    //1. create virtual DOM
+    //React.creatElement(标签名，标签属性，标签内容)
+    const VDOM = React.createElement('h1', {id:'title'}, React.createElement('span', {}, 'Hello, React'));
 
-        //2. render virtual DOM to web page
-        // ReactDOM.render(virtual DOM, Container)
-        ReactDOM.render(VDOM, document.getElementById('test'))
-    </script>
+    //2. render virtual DOM to web page
+    // ReactDOM.render(virtual DOM, Container)
+    ReactDOM.render(VDOM, document.getElementById('test'))
+</script>
 ```
 
 ---
@@ -235,21 +235,21 @@
 1. 虚拟dom 到底是啥？
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create virtual DOM
-        const VDOM = ( //不要引号，因为不是string
-            <h1 id="title">
-                <span>Hello, React</span>
-            </h1> 
-        )
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create virtual DOM
+    const VDOM = ( //不要引号，因为不是string
+        <h1 id="title">
+            <span>Hello, React</span>
+        </h1> 
+    )
 
-        //2. render virtual DOM to web page
-        // ReactDOM.render(virtual DOM, Container)
-        ReactDOM.render(VDOM, document.getElementById('test'))
+    //2. render virtual DOM to web page
+    // ReactDOM.render(virtual DOM, Container)
+    ReactDOM.render(VDOM, document.getElementById('test'))
 
-        console.log('Virtual DOM: ', VDOM)
-    </script>
+    console.log('Virtual DOM: ', VDOM)
+</script>
 ```
 
 ![](img/2020-12-30-15-47-23.png)
@@ -257,23 +257,23 @@
 - 所以虚拟dom就是一个一般object.
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create virtual DOM
-        const VDOM = ( //不要引号，因为不是string
-            <h1 id="title">
-                <span>Hello, React</span>
-            </h1> 
-        )
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create virtual DOM
+    const VDOM = ( //不要引号，因为不是string
+        <h1 id="title">
+            <span>Hello, React</span>
+        </h1> 
+    )
 
-        //2. render virtual DOM to web page
-        // ReactDOM.render(virtual DOM, Container)
-        ReactDOM.render(VDOM, document.getElementById('test'))
+    //2. render virtual DOM to web page
+    // ReactDOM.render(virtual DOM, Container)
+    ReactDOM.render(VDOM, document.getElementById('test'))
 
-        console.log('Virtual DOM: ', VDOM);
-        console.log(typeof VDOM);
-        console.log(VDOM instanceof Object);
-    </script>
+    console.log('Virtual DOM: ', VDOM);
+    console.log(typeof VDOM);
+    console.log(VDOM instanceof Object);
+</script>
 ```
 
 ![](img/2020-12-30-15-50-05.png)

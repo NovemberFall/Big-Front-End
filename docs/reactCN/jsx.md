@@ -116,25 +116,25 @@
 - 可以分成三部分
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //模拟一些数据
-        const data = ['Angular', 'Rreact', 'Vue']
-        //1. create virtual DOM
-        const VDOM = (
-            <div>
-                <h1>Front-end JS framework</h1>
-                <ul>
-                    <li>Angular</li>
-                    <li>React</li>
-                    <li>Vue</li>
-                </ul>
-            </div>
-        )
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //模拟一些数据
+    const data = ['Angular', 'Rreact', 'Vue']
+    //1. create virtual DOM
+    const VDOM = (
+        <div>
+            <h1>Front-end JS framework</h1>
+            <ul>
+                <li>Angular</li>
+                <li>React</li>
+                <li>Vue</li>
+            </ul>
+        </div>
+    )
 
-        //2. render virtual DOM to Web Page
-        ReactDOM.render(VDOM, document.getElementById('test'));
-    </script>
+    //2. render virtual DOM to Web Page
+    ReactDOM.render(VDOM, document.getElementById('test'));
+</script>
 ```
 
 ![](img/2020-12-30-20-07-16.png)
@@ -142,23 +142,23 @@
 ---
 
 ```html
-    <script type="text/babel">
-        //模拟一些数据
-        const data = ['Angular', 'Rreact', 'Vue']
-        const data2 = [<li>Angular</li>, <li>Rreact</li>, <li>Vue</li>]
-        //1. create virtual DOM
-        const VDOM = (
-            <div>
-                <h1>Front-end JS framework</h1>
-                <ul>
-                    {data2}
-                </ul>
-            </div>
-        )
+<script type="text/babel">
+    //模拟一些数据
+    const data = ['Angular', 'Rreact', 'Vue']
+    const data2 = [<li>Angular</li>, <li>Rreact</li>, <li>Vue</li>]
+    //1. create virtual DOM
+    const VDOM = (
+        <div>
+            <h1>Front-end JS framework</h1>
+            <ul>
+                {data2}
+            </ul>
+        </div>
+    )
 
-        //2. render virtual DOM to Web Page
-        ReactDOM.render(VDOM, document.getElementById('test'));
-    </script>
+    //2. render virtual DOM to Web Page
+    ReactDOM.render(VDOM, document.getElementById('test'));
+</script>
 ```
 
 ![](img/2020-12-30-20-09-45.png)
@@ -168,24 +168,24 @@
 ### 假如给react 一个obj 会如何？
 
 ```html
-    <script type="text/babel">
-        //模拟一些数据
-        const data = ['Angular', 'React', 'Vue']
-        const data2 = [<li>Angular</li>, <li>Rreact</li>, <li>Vue</li>]
-        const obj = {name1: 'Angular', name2: 'React', name3: 'Vue'};
-        //1. create virtual DOM
-        const VDOM = (
-            <div>
-                <h1>Front-end JS framework</h1>
-                <ul>
-                    {obj}
-                </ul>
-            </div>
-        )
+<script type="text/babel">
+    //模拟一些数据
+    const data = ['Angular', 'React', 'Vue']
+    const data2 = [<li>Angular</li>, <li>Rreact</li>, <li>Vue</li>]
+    const obj = {name1: 'Angular', name2: 'React', name3: 'Vue'};
+    //1. create virtual DOM
+    const VDOM = (
+        <div>
+            <h1>Front-end JS framework</h1>
+            <ul>
+                {obj}
+            </ul>
+        </div>
+    )
 
-        //2. render virtual DOM to Web Page
-        ReactDOM.render(VDOM, document.getElementById('test'));
-    </script>
+    //2. render virtual DOM to Web Page
+    ReactDOM.render(VDOM, document.getElementById('test'));
+</script>
 ```    
 
 ![](img/2020-12-30-20-13-36.png)
@@ -193,29 +193,29 @@
 - 所以我们必须传递 array
 
 ```html
-    <script type="text/babel">
+<script type="text/babel">
 
-        //模拟一些数据
-        const data = ['Angular', 'React', 'Vue']
-        const data2 = [<li>Angular</li>, <li>Rreact</li>, <li>Vue</li>]
-        const obj = {name1: 'Angular', name2: 'React', name3: 'Vue'};
-        //1. create virtual DOM
-        const VDOM = (
-            <div>
-                <h1>Front-end JS framework</h1>
-                <ul>
-                    {
-                        data.map((item)=>{
-                            return <li>{item}</li>
-                        })
-                    }
-                </ul>
-            </div>
-        )
+    //模拟一些数据
+    const data = ['Angular', 'React', 'Vue']
+    const data2 = [<li>Angular</li>, <li>Rreact</li>, <li>Vue</li>]
+    const obj = {name1: 'Angular', name2: 'React', name3: 'Vue'};
+    //1. create virtual DOM
+    const VDOM = (
+        <div>
+            <h1>Front-end JS framework</h1>
+            <ul>
+                {
+                    data.map((item)=>{
+                        return <li>{item}</li>
+                    })
+                }
+            </ul>
+        </div>
+    )
 
-        //2. render virtual DOM to Web Page
-        ReactDOM.render(VDOM, document.getElementById('test'));
-    </script>
+    //2. render virtual DOM to Web Page
+    ReactDOM.render(VDOM, document.getElementById('test'));
+</script>
 ```
 
 ![](img/2020-12-30-20-30-53.png)
