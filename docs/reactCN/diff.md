@@ -120,49 +120,49 @@
 
 
 ```js
-	class Person extends React.Component{
+class Person extends React.Component{
 
-		state = {
-			persons:[
-				{id:1,name:'小张',age:18},
-				{id:2,name:'小李',age:19},
-			]
-		}
-
-		add = ()=>{
-			const {persons} = this.state
-			const p = {id:persons.length+1,name:'小王',age:20}
-			this.setState({persons:[p,...persons]})
-		}
-
-		render(){
-			return (
-				<div>
-					<h2>展示人员信息</h2>
-					<button onClick={this.add}>添加一个小王</button>					
-					<ul>
-						{
-							this.state.persons.map((personObj,index)=>{
-								return <li key={index}>{personObj.name}---{personObj.age}</li>
-							})
-						}
-					</ul>
-					<hr/>
-					<hr/>
-					<h3>使用id（数据的唯一标识）作为key</h3>
-					<ul>
-						{
-							this.state.persons.map((personObj)=>{
-								return <li key={personObj.id}>{personObj.name}---{personObj.age}</li>
-							})
-						}
-					</ul>					
-				</div>
-			)
-		}
+	state = {
+		persons:[
+			{id:1,name:'小张',age:18},
+			{id:2,name:'小李',age:19},
+		]
 	}
 
-	ReactDOM.render(<Person/>,document.getElementById('test'))	
+	add = ()=>{
+		const {persons} = this.state
+		const p = {id:persons.length+1,name:'小王',age:20}
+		this.setState({persons:[p,...persons]})
+	}
+
+	render(){
+		return (
+			<div>
+				<h2>展示人员信息</h2>
+				<button onClick={this.add}>添加一个小王</button>					
+				<ul>
+					{
+						this.state.persons.map((personObj,index)=>{
+							return <li key={index}>{personObj.name}---{personObj.age}</li>
+						})
+					}
+				</ul>
+				<hr/>
+				<hr/>
+				<h3>使用id（数据的唯一标识）作为key</h3>
+				<ul>
+					{
+						this.state.persons.map((personObj)=>{
+							return <li key={personObj.id}>{personObj.name}---{personObj.age}</li>
+						})
+					}
+				</ul>					
+			</div>
+		)
+	}
+}
+
+ReactDOM.render(<Person/>,document.getElementById('test'))	
 ```
 
 
@@ -177,49 +177,49 @@
 
 
 ```js
-	class Person extends React.Component{
+class Person extends React.Component{
 
-		state = {
-			persons:[
-				{id:1,name:'小张',age:18},
-				{id:2,name:'小李',age:19},
-			]
-		}
-
-		add = ()=>{
-			const {persons} = this.state
-			const p = {id:persons.length+1,name:'小王',age:20}
-			this.setState({persons:[p,...persons]})
-		}
-
-		render(){
-			return (
-				<div>
-					<h2>展示人员信息</h2>
-					<button onClick={this.add}>添加一个小王</button>					
-					<ul>
-						{
-							this.state.persons.map((personObj,index)=>{
-								return <li key={index}>{personObj.name}---{personObj.age}<input type="text"/></li>
-							})
-						}
-					</ul>
-					<hr/>
-					<hr/>
-					<h3>使用id（数据的唯一标识）作为key</h3>
-					<ul>
-						{
-							this.state.persons.map((personObj)=>{
-								return <li key={personObj.id}>{personObj.name}---{personObj.age}<input type="text"/></li>
-							})
-						}
-					</ul>					
-				</div>
-			)
-		}
+	state = {
+		persons:[
+			{id:1,name:'小张',age:18},
+			{id:2,name:'小李',age:19},
+		]
 	}
 
-	ReactDOM.render(<Person/>,document.getElementById('test'))	
+	add = ()=>{
+		const {persons} = this.state
+		const p = {id:persons.length+1,name:'小王',age:20}
+		this.setState({persons:[p,...persons]})
+	}
+
+	render(){
+		return (
+			<div>
+				<h2>展示人员信息</h2>
+				<button onClick={this.add}>添加一个小王</button>					
+				<ul>
+					{
+						this.state.persons.map((personObj,index)=>{
+							return <li key={index}>{personObj.name}---{personObj.age}<input type="text"/></li>
+						})
+					}
+				</ul>
+				<hr/>
+				<hr/>
+				<h3>使用id（数据的唯一标识）作为key</h3>
+				<ul>
+					{
+						this.state.persons.map((personObj)=>{
+							return <li key={personObj.id}>{personObj.name}---{personObj.age}<input type="text"/></li>
+						})
+					}
+				</ul>					
+			</div>
+		)
+	}
+}
+
+ReactDOM.render(<Person/>,document.getElementById('test'))	
 ```
 
 

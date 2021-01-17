@@ -25,41 +25,41 @@
 ---
 
 ```html
-	<script type="text/babel">
-		//创建组件
-		//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
-		class Life extends React.Component{
+<script type="text/babel">
+	//创建组件
+	//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
+	class Life extends React.Component{
 
-			state = {opacity:1}
+		state = {opacity:1}
 
-			death = ()=>{
-				//卸载组件
-				ReactDOM.unmountComponentAtNode(document.getElementById('test'))
-			}
-
-
-			//初始化渲染、状态更新之后
-			render(){
-                setInterval(()=>{
-                    //获取原状态
-                    let {opactiy} = this.state
-                    //减小0.1
-                    opacity -= 0.1
-                    if(opactiy <= 0) opacity = 1;
-                    //设置新的透明度
-                    this.setState({opactiy})
-                }, 200);
-				return(
-					<div>
-						<h2 style={{opacity:this.state.opacity}}>React学不会怎么办？</h2>
-						<button onClick={this.death}>不活了</button>
-					</div>
-				)
-			}
+		death = ()=>{
+			//卸载组件
+			ReactDOM.unmountComponentAtNode(document.getElementById('test'))
 		}
-		//渲染组件
-		ReactDOM.render(<Life/>,document.getElementById('test'))
-	</script>
+
+
+		//初始化渲染、状态更新之后
+		render(){
+			setInterval(()=>{
+				//获取原状态
+				let {opactiy} = this.state
+				//减小0.1
+				opacity -= 0.1
+				if(opactiy <= 0) opacity = 1;
+				//设置新的透明度
+				this.setState({opactiy})
+			}, 200);
+			return(
+				<div>
+					<h2 style={{opacity:this.state.opacity}}>React学不会怎么办？</h2>
+					<button onClick={this.death}>不活了</button>
+				</div>
+			)
+		}
+	}
+	//渲染组件
+	ReactDOM.render(<Life/>,document.getElementById('test'))
+</script>
 ```
 
 
@@ -81,44 +81,44 @@
 ---
 
 ```js
-		//创建组件
-		//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
-		class Life extends React.Component{
+//创建组件
+//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
+class Life extends React.Component{
 
-			state = {opacity:1}
+	state = {opacity:1}
 
-			death = ()=>{
-				//卸载组件
-				ReactDOM.unmountComponentAtNode(document.getElementById('test'))
-			}
+	death = ()=>{
+		//卸载组件
+		ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+	}
 
-			action = ()=>{
-                setInterval(()=>{
-                    //获取原状态
-                    let {opacity} = this.state
-                    //减小0.1
-                    opacity -= 0.1
-                    if(opacity <= 0) opacity = 1
-                    //设置新的透明度
-                    this.setState({opacity})
-                }, 200);
-			}
+	action = ()=>{
+		setInterval(()=>{
+			//获取原状态
+			let {opacity} = this.state
+			//减小0.1
+			opacity -= 0.1
+			if(opacity <= 0) opacity = 1
+			//设置新的透明度
+			this.setState({opacity})
+		}, 200);
+	}
 
 
-			//初始化渲染、状态更新之后
-			render(){
-                console.log('render')
-				return(
-					<div>
-						<h2 style={{opacity:this.state.opacity}}>React学不会怎么办？</h2>
-						<button onClick={this.death}>不活了</button>
-						<button onClick={this.action}>开始变化</button>
-					</div>
-				)
-			}
-		}
-		//渲染组件
-		ReactDOM.render(<Life/>,document.getElementById('test'))
+	//初始化渲染、状态更新之后
+	render(){
+		console.log('render')
+		return(
+			<div>
+				<h2 style={{opacity:this.state.opacity}}>React学不会怎么办？</h2>
+				<button onClick={this.death}>不活了</button>
+				<button onClick={this.action}>开始变化</button>
+			</div>
+		)
+	}
+}
+//渲染组件
+ReactDOM.render(<Life/>,document.getElementById('test'))
 ```
 
 ![](img/2021-01-12-16-02-09.png)
@@ -131,44 +131,44 @@
 ### 现在我们改进
 
 ```js
-		//创建组件
-		//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
-		class Life extends React.Component{
+//创建组件
+//生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
+class Life extends React.Component{
 
-			state = {opacity:1}
+	state = {opacity:1}
 
-			death = ()=>{
-				//卸载组件
-				ReactDOM.unmountComponentAtNode(document.getElementById('test'))
-			}
+	death = ()=>{
+		//卸载组件
+		ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+	}
 
-			//组件挂载完毕
-			componentDidMount(){
-				console.log('componentDidMount');
-				this.timer = setInterval(() => {
-					//获取原状态
-					let {opacity} = this.state
-					//减小0.1
-					opacity -= 0.1
-					if(opacity <= 0) opacity = 1
-					//设置新的透明度
-					this.setState({opacity})
-				}, 200);
-			}
+	//组件挂载完毕
+	componentDidMount(){
+		console.log('componentDidMount');
+		this.timer = setInterval(() => {
+			//获取原状态
+			let {opacity} = this.state
+			//减小0.1
+			opacity -= 0.1
+			if(opacity <= 0) opacity = 1
+			//设置新的透明度
+			this.setState({opacity})
+		}, 200);
+	}
 
-			//初始化渲染、状态更新之后
-			render(){
-				console.log('render');
-				return(
-					<div>
-						<h2 style={{opacity:this.state.opacity}}>React学不会怎么办？</h2>
-						<button onClick={this.death}>不活了</button>
-					</div>
-				)
-			}
-		}
-		//渲染组件
-		ReactDOM.render(<Life/>,document.getElementById('test'))
+	//初始化渲染、状态更新之后
+	render(){
+		console.log('render');
+		return(
+			<div>
+				<h2 style={{opacity:this.state.opacity}}>React学不会怎么办？</h2>
+				<button onClick={this.death}>不活了</button>
+			</div>
+		)
+	}
+}
+//渲染组件
+ReactDOM.render(<Life/>,document.getElementById('test'))
 ```
 
 ![](img/2021-01-12-16-14-39.png)

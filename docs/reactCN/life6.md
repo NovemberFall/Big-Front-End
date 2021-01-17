@@ -105,10 +105,10 @@
 
 
 ```js
-			//在更新之前获取快照
-			getSnapshotBeforeUpdate(){
-				console.log('getSnapshotBeforeUpdate');
-			}
+//在更新之前获取快照
+getSnapshotBeforeUpdate(){
+	console.log('getSnapshotBeforeUpdate');
+}
 ```
 
 - 可以看到 return 了 undefned
@@ -125,11 +125,11 @@
 
 
 ```js
-			//在更新之前获取快照
-			getSnapshotBeforeUpdate(){
-				console.log('getSnapshotBeforeUpdate');
-				return 'atguigu'
-			}
+//在更新之前获取快照
+getSnapshotBeforeUpdate(){
+	console.log('getSnapshotBeforeUpdate');
+	return 'atguigu'
+}
 ```
 
 
@@ -141,69 +141,69 @@
 
 
 ```js
-		class Count extends React.Component{
-			//构造器
-			constructor(props){
-				console.log('Count---constructor');
-				super(props)
-				//初始化状态
-				this.state = {count:0}
-			}
+class Count extends React.Component{
+	//构造器
+	constructor(props){
+		console.log('Count---constructor');
+		super(props)
+		//初始化状态
+		this.state = {count:0}
+	}
 
-			//加1按钮的回调
-			add = ()=>{
-				//获取原状态
-				const {count} = this.state
-				//更新状态
-				this.setState({count:count+1})
-			}
+	//加1按钮的回调
+	add = ()=>{
+		//获取原状态
+		const {count} = this.state
+		//更新状态
+		this.setState({count:count+1})
+	}
 
-			//卸载组件按钮的回调
-			death = ()=>{
-				ReactDOM.unmountComponentAtNode(document.getElementById('test'))
-			}
+	//卸载组件按钮的回调
+	death = ()=>{
+		ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+	}
 
-			//强制更新按钮的回调
-			force = ()=>{
-				this.forceUpdate()
-			}
+	//强制更新按钮的回调
+	force = ()=>{
+		this.forceUpdate()
+	}
 
-			//组件挂载完毕的钩子
-			componentDidMount(){
-				console.log('Count---componentDidMount');
-			}
+	//组件挂载完毕的钩子
+	componentDidMount(){
+		console.log('Count---componentDidMount');
+	}
 
-			//组件将要卸载的钩子
-			componentWillUnmount(){
-				console.log('Count---componentWillUnmount');
-			}
+	//组件将要卸载的钩子
+	componentWillUnmount(){
+		console.log('Count---componentWillUnmount');
+	}
 
-			//控制组件更新的“阀门”
-			shouldComponentUpdate(){
-				console.log('Count---shouldComponentUpdate');
-				return true
-			}
-			
-			//组件更新完毕的钩子
-			componentDidUpdate(a, b){
-				console.log('Count---componentDidUpdate', a, b);
-			}
-			
-			render(){
-				console.log('Count---render');
-				const {count} = this.state
-				return(
-					<div>
-						<h2>当前求和为：{count}</h2>
-						<button onClick={this.add}>点我+1</button>
-						<button onClick={this.death}>卸载组件</button>
-						<button onClick={this.force}>不更改任何状态中的数据，强制更新一下</button>
-					</div>
-				)
-			}
-		}
-		
-		//渲染组件
+	//控制组件更新的“阀门”
+	shouldComponentUpdate(){
+		console.log('Count---shouldComponentUpdate');
+		return true
+	}
+	
+	//组件更新完毕的钩子
+	componentDidUpdate(a, b){
+		console.log('Count---componentDidUpdate', a, b);
+	}
+	
+	render(){
+		console.log('Count---render');
+		const {count} = this.state
+		return(
+			<div>
+				<h2>当前求和为：{count}</h2>
+				<button onClick={this.add}>点我+1</button>
+				<button onClick={this.death}>卸载组件</button>
+				<button onClick={this.force}>不更改任何状态中的数据，强制更新一下</button>
+			</div>
+		)
+	}
+}
+
+//渲染组件
 ```
 
 
@@ -219,83 +219,83 @@
 
 
 ```js
-		//创建组件
-		class Count extends React.Component{
-			//构造器
-			constructor(props){
-				console.log('Count---constructor');
-				super(props)
-				//初始化状态
-				this.state = {count:0}
-			}
+//创建组件
+class Count extends React.Component{
+	//构造器
+	constructor(props){
+		console.log('Count---constructor');
+		super(props)
+		//初始化状态
+		this.state = {count:0}
+	}
 
-			//加1按钮的回调
-			add = ()=>{
-				//获取原状态
-				const {count} = this.state
-				//更新状态
-				this.setState({count:count+1})
-			}
+	//加1按钮的回调
+	add = ()=>{
+		//获取原状态
+		const {count} = this.state
+		//更新状态
+		this.setState({count:count+1})
+	}
 
-			//卸载组件按钮的回调
-			death = ()=>{
-				ReactDOM.unmountComponentAtNode(document.getElementById('test'))
-			}
+	//卸载组件按钮的回调
+	death = ()=>{
+		ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+	}
 
-			//强制更新按钮的回调
-			force = ()=>{
-				this.forceUpdate()
-			}
-			
-			//若state的值在任何时候都取决于props，那么可以使用getDerivedStateFromProps
-			static getDerivedStateFromProps(props,state){
-				console.log('getDerivedStateFromProps',props,state);
-				return null
-			}
+	//强制更新按钮的回调
+	force = ()=>{
+		this.forceUpdate()
+	}
+	
+	//若state的值在任何时候都取决于props，那么可以使用getDerivedStateFromProps
+	static getDerivedStateFromProps(props,state){
+		console.log('getDerivedStateFromProps',props,state);
+		return null
+	}
 
-			//在更新之前获取快照
-			getSnapshotBeforeUpdate(){
-				console.log('getSnapshotBeforeUpdate');
-				return 'atguigu'
-			}
+	//在更新之前获取快照
+	getSnapshotBeforeUpdate(){
+		console.log('getSnapshotBeforeUpdate');
+		return 'atguigu'
+	}
 
-			//组件挂载完毕的钩子
-			componentDidMount(){
-				console.log('Count---componentDidMount');
-			}
+	//组件挂载完毕的钩子
+	componentDidMount(){
+		console.log('Count---componentDidMount');
+	}
 
-			//组件将要卸载的钩子
-			componentWillUnmount(){
-				console.log('Count---componentWillUnmount');
-			}
+	//组件将要卸载的钩子
+	componentWillUnmount(){
+		console.log('Count---componentWillUnmount');
+	}
 
-			//控制组件更新的“阀门”
-			shouldComponentUpdate(){
-				console.log('Count---shouldComponentUpdate');
-				return true
-			}
+	//控制组件更新的“阀门”
+	shouldComponentUpdate(){
+		console.log('Count---shouldComponentUpdate');
+		return true
+	}
 
-			//组件更新完毕的钩子
-			componentDidUpdate(preProps,preState){
-				console.log('Count---componentDidUpdate',preProps,preState);
-			}
-			
-			render(){
-				console.log('Count---render');
-				const {count} = this.state
-				return(
-					<div>
-						<h2>当前求和为：{count}</h2>
-						<button onClick={this.add}>点我+1</button>
-						<button onClick={this.death}>卸载组件</button>
-						<button onClick={this.force}>不更改任何状态中的数据，强制更新一下</button>
-					</div>
-				)
-			}
-		}
-		
-		//渲染组件
-		ReactDOM.render(<Count count={199}/>,document.getElementById('test'))
+	//组件更新完毕的钩子
+	componentDidUpdate(preProps,preState){
+		console.log('Count---componentDidUpdate',preProps,preState);
+	}
+	
+	render(){
+		console.log('Count---render');
+		const {count} = this.state
+		return(
+			<div>
+				<h2>当前求和为：{count}</h2>
+				<button onClick={this.add}>点我+1</button>
+				<button onClick={this.death}>卸载组件</button>
+				<button onClick={this.force}>不更改任何状态中的数据，强制更新一下</button>
+			</div>
+		)
+	}
+}
+
+//渲染组件
+ReactDOM.render(<Count count={199}/>,document.getElementById('test'))
 ```
 
 ![](img/2021-01-14-22-42-22.png)
@@ -307,10 +307,10 @@
 
 
 ```js
-			//组件更新完毕的钩子
-			componentDidUpdate(preProps,preState,snapshotValue){
-				console.log('Count---componentDidUpdate',preProps,preState,snapshotValue);
-			}
+//组件更新完毕的钩子
+componentDidUpdate(preProps,preState,snapshotValue){
+	console.log('Count---componentDidUpdate',preProps,preState,snapshotValue);
+}
 			
 ```
 

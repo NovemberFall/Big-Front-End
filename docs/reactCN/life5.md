@@ -134,13 +134,13 @@
 
 
 ```js
-			//若state的值在任何时候都取决于props，那么可以使用getDerivedStateFromProps
-			static getDerivedStateFromProps(props,state){
-				console.log('getDerivedStateFromProps',props,state);
-				return props
-			}
+//若state的值在任何时候都取决于props，那么可以使用getDerivedStateFromProps
+static getDerivedStateFromProps(props,state){
+	console.log('getDerivedStateFromProps',props,state);
+	return props
+}
 
-            ReactDOM.render(<Count count={199}/>,document.getElementById('test'))
+ReactDOM.render(<Count count={199}/>,document.getElementById('test'))
 ```
 
 ![](img/2021-01-14-22-10-26.png)

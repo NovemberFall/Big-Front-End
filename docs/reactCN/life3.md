@@ -70,41 +70,41 @@
 
 
 ```js
-		//父组件A
-		class A extends React.Component{
-			//初始化状态
-			state = {carName:'奔驰'}
+//父组件A
+class A extends React.Component{
+	//初始化状态
+	state = {carName:'奔驰'}
 
-			changeCar = ()=>{
-				this.setState({carName:'奥拓'})
-			}
+	changeCar = ()=>{
+		this.setState({carName:'奥拓'})
+	}
 
-			render(){
-				return(
-					<div>
-						<div>我是A组件</div>
-						<button onClick={this.changeCar}>换车</button>
-						<B carName={this.state.carName}/>
-					</div>
-				)
-			}
-		}
-		
-		//子组件B
-		class B extends React.Component{
-			//组件挂载完毕的钩子
-			componentDidMount(){
-				console.log('Count---componentDidMount');
-			}			            
-			componentWillReceiveProps(props){
-				console.log('B---componentWillReceiveProps',props);
-			}			
-			render(){
-				return(
-					<div>我是B组件，接收到的车是:{this.props.carName}</div>
-				)
-			}
-		}
+	render(){
+		return(
+			<div>
+				<div>我是A组件</div>
+				<button onClick={this.changeCar}>换车</button>
+				<B carName={this.state.carName}/>
+			</div>
+		)
+	}
+}
+
+//子组件B
+class B extends React.Component{
+	//组件挂载完毕的钩子
+	componentDidMount(){
+		console.log('Count---componentDidMount');
+	}			            
+	componentWillReceiveProps(props){
+		console.log('B---componentWillReceiveProps',props);
+	}			
+	render(){
+		return(
+			<div>我是B组件，接收到的车是:{this.props.carName}</div>
+		)
+	}
+}
 ```
 
 
@@ -133,58 +133,58 @@
 
 
 ```js
-		//父组件A
-		class A extends React.Component{
-			//初始化状态
-			state = {carName:'奔驰'}
+//父组件A
+class A extends React.Component{
+	//初始化状态
+	state = {carName:'奔驰'}
 
-			changeCar = ()=>{
-				this.setState({carName:'奥拓'})
-			}
+	changeCar = ()=>{
+		this.setState({carName:'奥拓'})
+	}
 
-			render(){
-				return(
-					<div>
-						<div>我是A组件</div>
-						<button onClick={this.changeCar}>换车</button>
-						<B carName={this.state.carName}/>
-					</div>
-				)
-			}
-		}
-		
-		//子组件B
-		class B extends React.Component{
-			//组件将要接收新的props的钩子
-			componentWillReceiveProps(props){
-				console.log('B---componentWillReceiveProps',props);
-			}
+	render(){
+		return(
+			<div>
+				<div>我是A组件</div>
+				<button onClick={this.changeCar}>换车</button>
+				<B carName={this.state.carName}/>
+			</div>
+		)
+	}
+}
 
-			//控制组件更新的“阀门”
-			shouldComponentUpdate(){
-				console.log('B---shouldComponentUpdate');
-				return true
-			}
-			//组件将要更新的钩子
-			componentWillUpdate(){
-				console.log('B---componentWillUpdate');
-			}
+//子组件B
+class B extends React.Component{
+	//组件将要接收新的props的钩子
+	componentWillReceiveProps(props){
+		console.log('B---componentWillReceiveProps',props);
+	}
 
-			//组件更新完毕的钩子
-			componentDidUpdate(){
-				console.log('B---componentDidUpdate');
-			}
+	//控制组件更新的“阀门”
+	shouldComponentUpdate(){
+		console.log('B---shouldComponentUpdate');
+		return true
+	}
+	//组件将要更新的钩子
+	componentWillUpdate(){
+		console.log('B---componentWillUpdate');
+	}
 
-			render(){
-				console.log('B---render');
-				return(
-					<div>我是B组件，接收到的车是:{this.props.carName}</div>
-				)
-			}
-		}
-		
-		//渲染组件
-		ReactDOM.render(<A/>,document.getElementById('test'))
+	//组件更新完毕的钩子
+	componentDidUpdate(){
+		console.log('B---componentDidUpdate');
+	}
+
+	render(){
+		console.log('B---render');
+		return(
+			<div>我是B组件，接收到的车是:{this.props.carName}</div>
+		)
+	}
+}
+
+//渲染组件
+ReactDOM.render(<A/>,document.getElementById('test'))
 ```
 
 
