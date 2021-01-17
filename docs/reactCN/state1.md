@@ -7,48 +7,48 @@
 - state 现在还是 null, 我们现在需要赋值，所以需要 constructor()
 
 ```html
-    <script type="text/babel">
-        //1. create 组件
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: true}
-            }
-            render(){
-                console.log(this)
-                return <h1>It's very hot today!</h1>
-            }
+<script type="text/babel">
+    //1. create 组件
+    class Weather extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {isHot: true}
         }
+        render(){
+            console.log(this)
+            return <h1>It's very hot today!</h1>
+        }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Weather/>, document.getElementById('test'))
-    </script>
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Weather/>, document.getElementById('test'))
+</script>
 ```
 
 ![](img/2020-12-31-23-44-40.png)
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 组件
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: true}
-            }
-            render(){
-                // console.log(this)
-                // const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1>It's very {this.state.isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 组件
+    class Weather extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {isHot: true}
         }
+        render(){
+            // console.log(this)
+            // const {isHot} = this.state;
+            // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+            return <h1>It's very {this.state.isHot ? 'Hot' : 'Cold'} today!</h1>
+        }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Weather/>, document.getElementById('test'))
-    </script>
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Weather/>, document.getElementById('test'))
+</script>
 ```
 
 - 但是现在这样写还是static的，所以我们要写成dynamic的。
@@ -115,30 +115,30 @@
 
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 组件
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: true}
-            }
-            render(){
-                // console.log(this)
-                // const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1 onClick= {demo} >It's very {this.state.isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 组件
+    class Weather extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {isHot: true}
         }
-
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Weather/>, document.getElementById('test'))
-
-        function demo(){
-            console.log('title is clicked!')
+        render(){
+            // console.log(this)
+            // const {isHot} = this.state;
+            // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+            return <h1 onClick= {demo} >It's very {this.state.isHot ? 'Hot' : 'Cold'} today!</h1>
         }
-    </script>
+    }
+
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Weather/>, document.getElementById('test'))
+
+    function demo(){
+        console.log('title is clicked!')
+    }
+</script>
 ```
 
 ![](img/2021-01-01-00-28-04.png)
@@ -158,32 +158,32 @@
 ### 但是很遗憾，this 依然会丢失!
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 组件
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: true}
-            }
-            render(){
-                // console.log(this)
-                const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
-            
-            //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
-            //通过Weather实例调用changeWeather时，changeWeather中的this就是Weather实例
-            changeWeather(){
-                console.log(this.state.isHot)
-            }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 组件
+    class Weather extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {isHot: true}
         }
+        render(){
+            // console.log(this)
+            const {isHot} = this.state;
+            // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+            return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+        }
+        
+        //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
+        //通过Weather实例调用changeWeather时，changeWeather中的this就是Weather实例
+        changeWeather(){
+            console.log(this.state.isHot)
+        }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Weather/>, document.getElementById('test'))
-    </script>
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Weather/>, document.getElementById('test'))
+</script>
 ```
 
 ![](img/2021-01-01-01-04-13.png)
@@ -257,38 +257,38 @@
 
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 组件
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: false}
-                this.changeWeather = this.changeWeather.bind(this);
-            }
-            render(){
-                // console.log(this)
-                const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
-            
-            changeWeather(){
-                //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
-                //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
-                //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
-                console.log(this.state.isHot)
-                console.log(this)
-            }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 组件
+    class Weather extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {isHot: false}
+            this.changeWeather = this.changeWeather.bind(this);
         }
+        render(){
+            // console.log(this)
+            const {isHot} = this.state;
+            // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+            return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+        }
+        
+        changeWeather(){
+            //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
+            //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
+            //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
+            console.log(this.state.isHot)
+            console.log(this)
+        }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Weather/>, document.getElementById('test'))
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Weather/>, document.getElementById('test'))
 
-        // const w = new Weather();
-        // w.changeWeather();
-    </script>
+    // const w = new Weather();
+    // w.changeWeather();
+</script>
 ```
 
 ![](img/2021-01-01-10-05-12.png)
@@ -304,38 +304,38 @@
 - 假如没有这句话，还是undefine, 但我们可以在类的外面尝试new 一个新对象:
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 组件
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: false}
-                // this.changeWeather = this.changeWeather.bind(this);
-            }
-            render(){
-                // console.log(this)
-                const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
-            
-            changeWeather(){
-                //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
-                //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
-                //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
-                console.log(this.state.isHot)
-                console.log(this)
-            }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 组件
+    class Weather extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {isHot: false}
+            // this.changeWeather = this.changeWeather.bind(this);
         }
+        render(){
+            // console.log(this)
+            const {isHot} = this.state;
+            // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+            return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+        }
+        
+        changeWeather(){
+            //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
+            //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
+            //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
+            console.log(this.state.isHot)
+            console.log(this)
+        }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Weather/>, document.getElementById('test'))
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Weather/>, document.getElementById('test'))
 
-        const w = new Weather();
-        w.changeWeather();
-    </script>
+    const w = new Weather();
+    w.changeWeather();
+</script>
 ```
 
 ![](img/2021-01-01-10-28-06.png)
@@ -349,31 +349,31 @@
 - 代码改成如下：
 
 ```js
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: false}
-                this.changeWeather = this.changeWeather.bind(this);
-            }
-            render(){
-                // console.log(this)
-                const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
-            
-            changeWeather(){
-                //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
-                //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
-                //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
-                // console.log(this)
+class Weather extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {isHot: false}
+        this.changeWeather = this.changeWeather.bind(this);
+    }
+    render(){
+        // console.log(this)
+        const {isHot} = this.state;
+        // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+        return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+    }
+    
+    changeWeather(){
+        //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
+        //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
+        //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
+        // console.log(this)
 
-                //获取原来的isHot
-                const isHot = this.state.isHot;
-                this.state.isHot = !isHot;
-                console.log(this.state.isHot);
-            }
-        }
+        //获取原来的isHot
+        const isHot = this.state.isHot;
+        this.state.isHot = !isHot;
+        console.log(this.state.isHot);
+    }
+}
 ```
 
 - 点击事件无法开启， 
@@ -394,35 +394,35 @@
 
 
 ```js
-        class Weather extends React.Component{
-            constructor(props){
-                super(props)
-                this.state = {isHot: false}
-                this.changeWeather = this.changeWeather.bind(this);
-            }
-            render(){
-                // console.log(this)
-                const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
-            
-            changeWeather(){
-                //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
-                //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
-                //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
-                // console.log(this)
+class Weather extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {isHot: false}
+        this.changeWeather = this.changeWeather.bind(this);
+    }
+    render(){
+        // console.log(this)
+        const {isHot} = this.state;
+        // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+        return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+    }
+    
+    changeWeather(){
+        //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
+        //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
+        //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
+        // console.log(this)
 
-                //获取原来的isHot
-                const isHot = this.state.isHot;
-                //严重注意：state必须通过setState更新
-                this.setState({isHot: !isHot})
+        //获取原来的isHot
+        const isHot = this.state.isHot;
+        //严重注意：state必须通过setState更新
+        this.setState({isHot: !isHot})
 
-                //严重注意：state不可直接更改，下面这行就是直接更改，下面这行就是直接更改！！！
-                // this.state.isHot = !isHot; //这是错误的写法
-                console.log(this);
-            }
-        }
+        //严重注意：state不可直接更改，下面这行就是直接更改，下面这行就是直接更改！！！
+        // this.state.isHot = !isHot; //这是错误的写法
+        console.log(this);
+    }
+}
 ```
 
 ![](img/2021-01-01-10-49-49.png)
@@ -434,54 +434,54 @@
 ## 那么 constructor, render, changeweather, 各调用几次？
 
 ```html
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 组件
-        class Weather extends React.Component{
-            
-            //constructor 调用了几次？ ———— 1次，如何证明？
-            constructor(props){
-                console.log('constructor');
-                super(props)
-                this.state = {isHot: false}
-                this.changeWeather = this.changeWeather.bind(this);
-            }
-
-            //render()调用几次？ ———— 1+n次 1是初始化的那次，n是状态更新的次数
-            render(){
-                console.log('render');
-                // console.log(this)
-                const {isHot} = this.state;
-                // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-                return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
-            }
-            
-            //changeweather调用几次？ ———— 点击几次，调用几次
-            changeWeather(){
-                console.log('changeweather');
-                //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
-                //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
-                //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
-                // console.log(this)
-
-                //获取原来的isHot
-                const isHot = this.state.isHot;
-                //严重注意：state必须通过setState更新，且更新是一种合并，并不是替换！
-                this.setState({isHot: !isHot})
-
-                //严重注意：state不可直接更改，下面这行就是直接更改，下面这行就是直接更改！！！
-                // this.state.isHot = !isHot; //这是错误的写法
-                // console.log(this);
-            }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 组件
+    class Weather extends React.Component{
+        
+        //constructor 调用了几次？ ———— 1次，如何证明？
+        constructor(props){
+            console.log('constructor');
+            super(props)
+            this.state = {isHot: false}
+            this.changeWeather = this.changeWeather.bind(this);
         }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Weather/>, document.getElementById('test'))
+        //render()调用几次？ ———— 1+n次 1是初始化的那次，n是状态更新的次数
+        render(){
+            console.log('render');
+            // console.log(this)
+            const {isHot} = this.state;
+            // return <h1>It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+            return <h1 onClick= {this.changeWeather} >It's very {isHot ? 'Hot' : 'Cold'} today!</h1>
+        }
+        
+        //changeweather调用几次？ ———— 点击几次，调用几次
+        changeWeather(){
+            console.log('changeweather');
+            //changeWeather 方法放在了哪里？ -- Weather的原型对象上，供实例使用
+            //由于changeWeather是作为onClick的callback,所以不是通过实例调用，是直接调用
+            //类中的方法默认开启了local `use strict`, 所以changeWeather中的this为undefined                
+            // console.log(this)
 
-        // const w = new Weather();
-        // w.changeWeather();
-    </script>
+            //获取原来的isHot
+            const isHot = this.state.isHot;
+            //严重注意：state必须通过setState更新，且更新是一种合并，并不是替换！
+            this.setState({isHot: !isHot})
+
+            //严重注意：state不可直接更改，下面这行就是直接更改，下面这行就是直接更改！！！
+            // this.state.isHot = !isHot; //这是错误的写法
+            // console.log(this);
+        }
+    }
+
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Weather/>, document.getElementById('test'))
+
+    // const w = new Weather();
+    // w.changeWeather();
+</script>
 ```
 
 

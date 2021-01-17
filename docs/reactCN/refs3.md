@@ -70,32 +70,32 @@
 
 
 ```js
-		//创建组件
-		class Demo extends React.Component{
-			/* 
-				React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点,该容器是“专人专用”的
-			 */
-			myRef = React.createRef()
+//创建组件
+class Demo extends React.Component{
+	/* 
+		React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点,该容器是“专人专用”的
+		*/
+	myRef = React.createRef()
 
-			//展示左侧输入框的数据
-			showData = ()=>{
-				console.log(this.myRef.current)
-			}
-			//展示右侧输入框的数据
-			showData2 = ()=>{
-				alert(this.myRef2.current.value);
-			}
-			render(){
-				return(
-					<div>
-						<input ref={this.myRef} type="text" placeholder="点击按钮提示数据"/>&nbsp;
-						<button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
-					</div>
-				)
-			}
-		}
-		//渲染组件到页面
-		ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
+	//展示左侧输入框的数据
+	showData = ()=>{
+		console.log(this.myRef.current)
+	}
+	//展示右侧输入框的数据
+	showData2 = ()=>{
+		alert(this.myRef2.current.value);
+	}
+	render(){
+		return(
+			<div>
+				<input ref={this.myRef} type="text" placeholder="点击按钮提示数据"/>&nbsp;
+				<button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
+			</div>
+		)
+	}
+}
+//渲染组件到页面
+ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
 ![](img/2021-01-10-22-10-39.png)
@@ -106,32 +106,32 @@
 
 
 ```js
-		//创建组件
-		class Demo extends React.Component{
-			/* 
-				React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点,该容器是“专人专用”的
-			 */
-			myRef = React.createRef()
+//创建组件
+class Demo extends React.Component{
+	/* 
+		React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点,该容器是“专人专用”的
+		*/
+	myRef = React.createRef()
 
-			//展示左侧输入框的数据
-			showData = ()=>{
-				console.log(this.myRef.current.value)
-			}
-			//展示右侧输入框的数据
-			showData2 = ()=>{
-				alert(this.myRef2.current.value);
-			}
-			render(){
-				return(
-					<div>
-						<input ref={this.myRef} type="text" placeholder="点击按钮提示数据"/>&nbsp;
-						<button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
-					</div>
-				)
-			}
-		}
-		//渲染组件到页面
-		ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
+	//展示左侧输入框的数据
+	showData = ()=>{
+		console.log(this.myRef.current.value)
+	}
+	//展示右侧输入框的数据
+	showData2 = ()=>{
+		alert(this.myRef2.current.value);
+	}
+	render(){
+		return(
+			<div>
+				<input ref={this.myRef} type="text" placeholder="点击按钮提示数据"/>&nbsp;
+				<button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
+			</div>
+		)
+	}
+}
+//渲染组件到页面
+ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
 
@@ -145,33 +145,33 @@
 
 
 ```js
-		//创建组件
-		class Demo extends React.Component{
-			/* 
-				React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点,该容器是“专人专用”的
-			 */
-			myRef = React.createRef()
+//创建组件
+class Demo extends React.Component{
+	/* 
+		React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点,该容器是“专人专用”的
+		*/
+	myRef = React.createRef()
 
-			//展示左侧输入框的数据
-			showData = ()=>{
-				// console.log(this.myRef.current.value)
-				console.log(this.myRef)
-			}
-			//展示右侧输入框的数据
-			showData2 = ()=>{
-				alert(this.myRef2.current.value);
-			}
-			render(){
-				return(
-					<div>
-						<input ref={this.myRef} type="text" placeholder="点击按钮提示数据"/>&nbsp;
-						<button ref={this.myRef} onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
-					</div>
-				)
-			}
-		}
-		//渲染组件到页面
-		ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
+	//展示左侧输入框的数据
+	showData = ()=>{
+		// console.log(this.myRef.current.value)
+		console.log(this.myRef)
+	}
+	//展示右侧输入框的数据
+	showData2 = ()=>{
+		alert(this.myRef2.current.value);
+	}
+	render(){
+		return(
+			<div>
+				<input ref={this.myRef} type="text" placeholder="点击按钮提示数据"/>&nbsp;
+				<button ref={this.myRef} onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
+			</div>
+		)
+	}
+}
+//渲染组件到页面
+ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
 

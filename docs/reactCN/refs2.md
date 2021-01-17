@@ -81,18 +81,18 @@
 ---
 
 ```js
-			render(){
-				const {isHot} = this.state
-				return(
-					<div>
-						<h2>今天天气很{isHot ? '炎热':'凉爽'}</h2>
-						<input ref={(currentNode)=>{this.input1 = currentNode;console.log('@',currentNode);}} type="text"/><br/><br/>
-						{/*<input ref={this.saveInput} type="text"/><br/><br/> */}
-						<button onClick={this.showInfo}>点我提示输入的数据</button>
-						<button onClick={this.changeWeather}>点我切换天气</button>
-					</div>
-				)
-			}
+render(){
+	const {isHot} = this.state
+	return(
+		<div>
+			<h2>今天天气很{isHot ? '炎热':'凉爽'}</h2>
+			<input ref={(currentNode)=>{this.input1 = currentNode;console.log('@',currentNode);}} type="text"/><br/><br/>
+			{/*<input ref={this.saveInput} type="text"/><br/><br/> */}
+			<button onClick={this.showInfo}>点我提示输入的数据</button>
+			<button onClick={this.changeWeather}>点我切换天气</button>
+		</div>
+	)
+}
 ```
 
 

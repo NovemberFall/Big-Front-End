@@ -41,22 +41,22 @@
 - 必须给Car new 一个实例，才能输出 100:
 
 ```js
-        class Car {
-            constructor(name, price){
-                this.name = name;
-                this.price = price;
-                this.wheel = 4;
-            }
+class Car {
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+        this.wheel = 4;
+    }
 
-            //类中可以直接写赋值语句，如下代码的含义是：给car的实例对象添加一个属性，名为a, 值为1
-            a = 1;
-            wheel = 4;
-            demo = 100;
-        }
-        // Car.demo = 100;
-        const C1 = new Car('Tesla', 199);
-        console.log(C1)
-        console.log(C1.demo);
+    //类中可以直接写赋值语句，如下代码的含义是：给car的实例对象添加一个属性，名为a, 值为1
+    a = 1;
+    wheel = 4;
+    demo = 100;
+}
+// Car.demo = 100;
+const C1 = new Car('Tesla', 199);
+console.log(C1)
+console.log(C1.demo);
 ```
 
 
@@ -64,22 +64,22 @@
 
 
 ```js
-        class Car {
-            constructor(name, price){
-                this.name = name;
-                this.price = price;
-                this.wheel = 4;
-            }
+class Car {
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+        this.wheel = 4;
+    }
 
-            //类中可以直接写赋值语句，如下代码的含义是：给car的实例对象添加一个属性，名为a, 值为1
-            a = 1;
-            wheel = 4;
-            static demo = 100;
-        }
-        // Car.demo = 100;
-        const C1 = new Car('Tesla', 199);
-        console.log(C1)
-        console.log(Car.demo);
+    //类中可以直接写赋值语句，如下代码的含义是：给car的实例对象添加一个属性，名为a, 值为1
+    a = 1;
+    wheel = 4;
+    static demo = 100;
+}
+// Car.demo = 100;
+const C1 = new Car('Tesla', 199);
+console.log(C1)
+console.log(Car.demo);
 ```
 
 ![](img/2021-01-09-15-51-38.png)

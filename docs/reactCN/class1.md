@@ -46,19 +46,19 @@
 ---
 
 ```js
-    <script type="text/babel">
-        //1. create class式组件
-        class MyComponent extends React.Component{//React.Component 是react内置的
-            render(){
-                //reander是放在了哪里？ -- MyComponent的原型对象上，给实例使用
-                return <h2>我是用class定义的组件(适用于[复杂组件]的定义)</h2>
-            }
+<script type="text/babel">
+    //1. create class式组件
+    class MyComponent extends React.Component{//React.Component 是react内置的
+        render(){
+            //reander是放在了哪里？ -- MyComponent的原型对象上，给实例使用
+            return <h2>我是用class定义的组件(适用于[复杂组件]的定义)</h2>
         }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(类组件, Container)
-        ReactDOM.render(<MyComponent/>, document.getElementById('test'))
-    </script>
+    //2. render 组件到页面
+    // ReactDOM.render(类组件, Container)
+    ReactDOM.render(<MyComponent/>, document.getElementById('test'))
+</script>
 ```
 
 ![](img/2020-12-31-22-54-19.png)

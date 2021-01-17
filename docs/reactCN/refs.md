@@ -115,28 +115,28 @@
 - 现在可以加上 ref 标签
 
 ```js
-		//创建组件
-		class Demo extends React.Component{
-			//展示左侧输入框的数据
-			showData = ()=>{
-				console.log(this.refs.input1);
-			}
-			//展示右侧输入框的数据
+//创建组件
+class Demo extends React.Component{
+	//展示左侧输入框的数据
+	showData = ()=>{
+		console.log(this.refs.input1);
+	}
+	//展示右侧输入框的数据
 
-			render(){
-				return(
-					<div>
-						<input ref="input1" type="text" placeholder="点击按钮提示数据"/>&nbsp;
-						<button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
-						<input ref="input2" type="text" placeholder="失去焦点提示数据"/>
-					</div>
-				)
-			}
-		}
+	render(){
+		return(
+			<div>
+				<input ref="input1" type="text" placeholder="点击按钮提示数据"/>&nbsp;
+				<button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
+				<input ref="input2" type="text" placeholder="失去焦点提示数据"/>
+			</div>
+		)
+	}
+}
 
 
-		//渲染组件到页面
-		ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
+//渲染组件到页面
+ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
 ![](img/2021-01-09-18-22-16.png)

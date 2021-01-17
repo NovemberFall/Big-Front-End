@@ -2,31 +2,31 @@
 
 ```html
 
-    <!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
-    <script type="text/babel">
-        //1. create 组件
-        class Person extends React.Component{
-            render(){
-                console.log(this)
-                const {name, age, gender} = this.props;
-                return(
-                    <ul>
-                        <li>name: {name}</li>
-                        <li>gender: {gender}</li>
-                        <li>age: {age}</li>                        
-                    </ul>
-                )
-            }
+<!-- type="text/babel" 表示现在这里写的是jsx, 不再是js -->
+<script type="text/babel">
+    //1. create 组件
+    class Person extends React.Component{
+        render(){
+            console.log(this)
+            const {name, age, gender} = this.props;
+            return(
+                <ul>
+                    <li>name: {name}</li>
+                    <li>gender: {gender}</li>
+                    <li>age: {age}</li>                        
+                </ul>
+            )
         }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Person name="tom" age="18" gender="male"/>, document.getElementById('test1'))
-        ReactDOM.render(<Person name="jerry" age="19" gender="male"/>, document.getElementById('test2'))
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Person name="tom" age="18" gender="male"/>, document.getElementById('test1'))
+    ReactDOM.render(<Person name="jerry" age="19" gender="male"/>, document.getElementById('test2'))
 
-        const p = {name: 'Tim', age: 22, gender: 'male'}
-        ReactDOM.render(<Person name={p.name} age={p.age} gender={p.gender}/>, document.getElementById('test3'))
-    </script>
+    const p = {name: 'Tim', age: 22, gender: 'male'}
+    ReactDOM.render(<Person name={p.name} age={p.age} gender={p.gender}/>, document.getElementById('test3'))
+</script>
 ```
 
 ---
@@ -34,31 +34,31 @@
 - 更简单的传值办法：
 
 ```html
-    <script type="text/babel">
-        //1. create 组件
-        class Person extends React.Component{
-            render(){
-                console.log(this)
-                const {name, age, gender} = this.props;
-                return(
-                    <ul>
-                        <li>name: {name}</li>
-                        <li>gender: {gender}</li>
-                        <li>age: {age}</li>                        
-                    </ul>
-                )
-            }
+<script type="text/babel">
+    //1. create 组件
+    class Person extends React.Component{
+        render(){
+            console.log(this)
+            const {name, age, gender} = this.props;
+            return(
+                <ul>
+                    <li>name: {name}</li>
+                    <li>gender: {gender}</li>
+                    <li>age: {age}</li>                        
+                </ul>
+            )
         }
+    }
 
-        //2. render 组件到页面
-        // ReactDOM.render(class component, Container)
-        ReactDOM.render(<Person name="tom" age="18" gender="male"/>, document.getElementById('test1'))
-        ReactDOM.render(<Person name="jerry" age="19" gender="male"/>, document.getElementById('test2'))
+    //2. render 组件到页面
+    // ReactDOM.render(class component, Container)
+    ReactDOM.render(<Person name="tom" age="18" gender="male"/>, document.getElementById('test1'))
+    ReactDOM.render(<Person name="jerry" age="19" gender="male"/>, document.getElementById('test2'))
 
-        const p = {name: 'Tim', age: 22, gender: 'male'}
-        // ReactDOM.render(<Person name={p.name} age={p.age} gender={p.gender}/>, document.getElementById('test3'))
-        ReactDOM.render(<Person {...p}/>, document.getElementById('test3'))
-    </script>
+    const p = {name: 'Tim', age: 22, gender: 'male'}
+    // ReactDOM.render(<Person name={p.name} age={p.age} gender={p.gender}/>, document.getElementById('test3'))
+    ReactDOM.render(<Person {...p}/>, document.getElementById('test3'))
+</script>
 ```
 
 ![](img/2021-01-01-13-30-42.png)
