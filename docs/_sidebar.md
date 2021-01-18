@@ -71,6 +71,7 @@
         * [getSnapshotBeforeUpdate News滚动的案例](reactCN/life7.md)
     * [DOM 的diffing 算法](reactCN/diff.md)
         * [diffing 总结](reactCN/diff1.md)
+    * [Redux introduction](reactCN/redux.md) 
 
 -----
 * [React-scaffold 脚手架](reactCN/scaffold.md)
