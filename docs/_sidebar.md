@@ -78,6 +78,7 @@
         * [useEffect()](reactCN/hook3.md) 
         * [比较常见的hook: useRef()](reactCN/hook4.md) 
         * [Fragment](reactCN/hook5.md) 
+        * [Context](reactCN/hook6.md)  
 
 -----
 * [React-scaffold 脚手架](reactCN/scaffold.md)
