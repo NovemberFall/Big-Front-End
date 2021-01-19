@@ -72,8 +72,9 @@
     * [DOM 的diffing 算法](reactCN/diff.md)
         * [diffing 总结](reactCN/diff1.md)
     * [Redux introduction](reactCN/redux.md) 
-    * [Redux Hook | setState](reactCN/hook.md) 
+    * [React 新特性Hook | setState的扩展](reactCN/hook.md) 
         * [Lazy Load](reactCN/hook1.md) 
+        * [Hook | setState()](reactCN/hook2.md) 
         * [useEffect()](reactCN/hook3.md) 
 
 -----
