@@ -249,7 +249,7 @@ export default Demo
 
 ![](img/2021-01-18-18-41-53.png)
 
-- 如果在红色区域，希望写一个 `componentWillUnmount()`, 就需要返回一个函数
+- 如果在红色区域，希望写一个 `componentWillUnmount()`, 就需要返回一个函数, 记住必须有返回值，才能模拟 `componentWillUnmount()`
 
 - 所以应该清楚定时器：
 
