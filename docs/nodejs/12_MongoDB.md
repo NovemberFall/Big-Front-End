@@ -1,21 +1,30 @@
 ## DATABASE NoSQL
+
 ![](img/2019-12-19-17-25-32.png)
 ![](img/2019-12-19-17-27-59.png)
 ![](img/2019-12-19-17-31-58.png)
+
 ---
 
 ## Installing MongoDB on macOS
+
 - since I have installed mongoDB
+
 ![](img/2019-12-19-17-39-43.png)
+
 - next step:
     - create a folder where the database can then actually store the data
     - run `mongo`
 
 #### Creating a Local Database
+
 - if a database doen't exit
+
 - basically switch to a database that doesn't exit, it will then create a new one 
+
 ![](img/2019-12-19-22-34-41.png)
-```sql
+
+```ruby
 > db
 test
 > use natours-test
@@ -40,11 +49,14 @@ switched to db natours-test
 > show collections
 tours
 ```
+
 ![](img/2019-12-19-22-45-42.png)
+
 ---
 
 ## CRUD: Creating Documents
-```sql
+
+```ruby
 > use natours-test
 switched to db natours-test
 > db.tours.insertMany([{ name: "The Sea Explorer", price: 497, rating: 4.8}, { name: "The Snow Adventure", price: 997, rating: 4.9, difficulty: "easy"}])
@@ -60,10 +72,12 @@ switched to db natours-test
 { "_id" : ObjectId("5dfc6f19a59d9953f8ed265e"), "name" : "The Sea Explorer", "price" : 497, "rating" : 4.8 }
 { "_id" : ObjectId("5dfc6f19a59d9953f8ed265f"), "name" : "The Snow Adventure", "price" : 997, "rating" : 4.9, "difficulty" : "easy" }
 ```
+
 ---
 
 ## CRUD: Querying(Reading)
-```sql
+
+```ruby
 > db.tours.find()
 > use natours-test
 switched to db natours-test
@@ -117,20 +131,30 @@ switched to db natours-test
 
 ###  lt means "less than",    gte mean "great thatn equal"
 ```
+
 ## CRUD: Updating Documents
 
 
 
 ## Using Compass App for CRUD
+
 - go to `MongoDB Download Center`
+
 ![](img/2019-12-19-21-48-19.png)
+
 - click Download
 - then click connect
+
 ![](img/2019-12-19-21-59-20.png)
+
 ![](img/2019-12-19-21-59-39.png)
+
 - `brew services start mongodb-community`
+
 ![](img/2019-12-19-22-04-30.png)
+
 - after start service
+
 ![](img/2019-12-19-22-03-17.png)
 
 
