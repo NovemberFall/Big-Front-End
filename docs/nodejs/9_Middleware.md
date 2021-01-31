@@ -1,7 +1,7 @@
 ## param Middleware
 
 - print out `id`
-- tourRoutes.js
+- `tourRoutes.js`
 
 ```js
 //2ND way, is similar to React.js
@@ -35,7 +35,7 @@ module.exports = router;
 
 ### since `id` is from param which is midlleware
 
-- update tourController.js
+- update `tourController.js`
 
 ```js
 //param ID is Middleware
@@ -128,7 +128,7 @@ exports.deleteTour = (req, res) => {
 
 ---
 
-- update tourRoutes.js
+- update `tourRoutes.js`
 
 ```js
 //2ND way, is similar to React.js
