@@ -12,7 +12,7 @@
 - now we installed it.
 
 - input `morgan github` on browser
-- click index.js
+- click `index.js`
 - see the morgan function
 
 ![](img/2019-12-18-13-31-00.png)
@@ -109,7 +109,7 @@ app.use((req, res, next) => {
 
 ## Implementing the Users Rotues
 
-- create a new app2.js
+- create a new `app2.js`
 
 ```js
 const getAllUsers = (req, res) => {
@@ -190,7 +190,7 @@ app.listen(port, () => {
 
 ## Creating and Mounting Multiple Routers
 
-- update app2.js
+- update `app2.js`
 
 ```js
 //Creating and Mounting Multiple Routers
@@ -403,7 +403,7 @@ app.listen(port, () => {
 
 - we need to change path since we change the tourRoutes's path
 
-### 4-NATOURS/routes/tourRoutes.js
+### `4-NATOURS/routes/tourRoutes.js`
 
 ```js
 const express = require('express');
@@ -515,7 +515,7 @@ module.exports = router;
 
 ---
 
-### 4-NATOURS/routes/userRoutes.js
+### `4-NATOURS/routes/userRoutes.js`
 
 ```js
 const express = require('express');
@@ -573,7 +573,7 @@ module.exports = router;
 ---
 
 
-### app2.js
+### `app2.js`
 
 
 
@@ -872,7 +872,7 @@ module.exports = router;
 ---
 
 
-## Create server.js file
+## Create `server.js` file
 
 
 
@@ -886,7 +886,7 @@ app.listen(port, () => {
 ```
 
 
-### change app2.js's codes
+### change `app2.js's` codes
 
 
 ```js
