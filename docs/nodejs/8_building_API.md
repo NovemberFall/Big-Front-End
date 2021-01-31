@@ -631,9 +631,13 @@ app.listen(port, () => {
 ---
 
 ### create a new folder `controllers`
+
 ![](img/2019-12-19-15-30-26.png)
+
 - we still can sperate these files into new folers
+
 #### `controllers/tourController.js`
+
 ```js
 const fs = require('fs');
 
@@ -835,7 +839,11 @@ exports.deleteUser = (req, res) => {
     });
 };
 ```
+
+---
+
 #### `routes/userController.js`
+
 ```js
 const express = require('express');
 const { getAllUsers, createUser, getUser, updateUser, deleteUser } = require('../controllers/userController');
