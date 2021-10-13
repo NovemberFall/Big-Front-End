@@ -88,6 +88,7 @@
         * [Switch](reactCN/switch.md)
         * [withRouter](reactCN/with.md)
     * [React 项目中如何安装bootstrap](reactCN/bootstrap.md)
+    * [React 项目中如何安装axios](reactCN/axios.md)
   
 -----
 * [React II](reactCamp/intro.md)
