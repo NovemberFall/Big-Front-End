@@ -1,6 +1,10 @@
 ## Chainning multiple middleware
+
 - adding a checkBody
+- 
 - `controllers/tourContorller.js`
+
+
 ```js
 //param ID is Middleware
 const fs = require('fs');
@@ -99,8 +103,13 @@ exports.deleteTour = (req, res) => {
     });
 };
 ```
+
+---
+
 - tourRoutes import `checkBody`
+
 - `routes/tourRoutes.js`
+
 ```js
 //Chainning multiple middleware
 const fs = require('fs');
@@ -199,9 +208,15 @@ exports.deleteTour = (req, res) => {
     });
 };
 ```
+
 ![](img/2019-12-20-10-02-43.png)
+
 - we fail this, since for here we don't have price.
+
 - checkBody will execute
+
 - now we add price for our data
+
 ![](img/2019-12-20-10-06-02.png)
+
 - checkBody will look for name OR price

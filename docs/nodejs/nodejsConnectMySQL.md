@@ -1,21 +1,33 @@
-### First thing we need to do is: Create a package.json file
+### First thing we need to do is: Create a `package.json` file
+
 - `npm init`
 
 - description: `Sample app for using mysql with node`
+
 - entry point: (index.js) `app.js`
+
 ---
+
 ![](img/2019-10-28-02-12-24.png)
+
 - and then just `enter` 
+
 ---
 
 - input `→ npm install --save mysql express`
+
 ---
-- create a app.js
+
+- create a `app.js`
 
 - option:
+
 - `npm install -g nodemon` , but i don't use
+
 ---
-- app.js
+
+### `app.js`
+
 ```js
 const express = require('express')
 const mysql = require('mysql')
@@ -26,11 +38,15 @@ app.listen('3000', () => {
     console.log('Server started on port 3000');
 })
 ```
+
 - `node app.js`
+
 ![](img/2019-10-28-08-36-17.png)
+
 ---
 
-- update app.js
+- update `app.js`
+
 ```js
 const express = require('express')
 const mysql = require('mysql')
@@ -68,16 +84,25 @@ app.listen('3000', () => {
     console.log('Server started on port 3000');
 })
 ```
+
 - `node app.js`
+
 ![](img/2019-10-28-08-45-46.png)
+
 ---
+
 ![](img/2019-10-28-08-47-10.png)
+
 ---
+
 ![](img/2019-10-28-08-48-52.png)
+
 ---
 
 ### CREATE A table
-- update app.js
+
+- update `app.js`
+
 ```js
 //Create table
 app.get('/createpoststable', (req, res) => {
@@ -94,8 +119,11 @@ app.get('/createpoststable', (req, res) => {
 ![](img/2019-10-28-10-29-45.png)
 ---
 
+
 ### add post 1
-- update app.js
+
+- update `app.js`
+
 ```js
 //Insert post1
 app.get('/addpost1', (req, res) => {
@@ -111,15 +139,20 @@ app.get('/addpost1', (req, res) => {
     });
 })
 ```
+
 ![](img/2019-10-28-10-34-58.png)
 ---
+
 ![](img/2019-10-28-10-35-07.png)
 ---
+
 ![](img/2019-10-28-10-35-43.png)
 ---
 
 ### add post 2
-- update app.js
+
+- update `app.js`
+
 ```js
 //Insert post2
 app.get('/addpost2', (req, res) => {
@@ -135,14 +168,21 @@ app.get('/addpost2', (req, res) => {
     });
 })
 ```
+
 ![](img/2019-10-28-10-37-17.png)
----
-![](img/2019-10-28-10-37-32.png)
----
-![](img/2019-10-28-10-37-46.png)
+
 ---
 
-### SELECT * FROM XXX
+![](img/2019-10-28-10-37-32.png)
+
+---
+
+![](img/2019-10-28-10-37-46.png)
+
+---
+
+### `SELECT * FROM XXX`
+
 ```js
 //Select posts
 app.get('/getposts', (req, res) => {
@@ -158,15 +198,23 @@ app.listen('3000', () => {
     console.log('Server started on port 3000');
 })
 ```
+
+
 ![](img/2019-10-28-10-40-24.png)
+
 ---
+
 ![](img/2019-10-28-10-40-32.png)
+
 ---
 
 
-### SELECT SINGLE post
-- update app.js
+### `SELECT SINGLE post`
+
+- update `app.js`
+
 - backtick for sql query, since we have to insert a variable
+
 ```js
 //Select single post
 app.get('/getpost/:id', (req, res) => {
@@ -179,19 +227,29 @@ app.get('/getpost/:id', (req, res) => {
     });
 })
 ```
+
 ![](img/2019-10-28-10-49-28.png)
+
 ---
+
 - insert a variable `id = 1`
+
 ![](img/2019-10-28-10-49-50.png)
+
 ---
 
 - insert `id = 2`
+
 ![](img/2019-10-28-10-50-26.png)
+
 ---
+
 ![](img/2019-10-28-10-50-35.png)
+
 ---
 
 ### UPDATE 
+
 ```js
 //Update post
 app.get('/updatepost/:id', (req, res) => {
@@ -205,6 +263,7 @@ app.get('/updatepost/:id', (req, res) => {
     });
 })
 ```
+
 ![](img/2019-10-28-10-58-34.png)
 ---
 ![](img/2019-10-28-10-58-42.png)
@@ -217,6 +276,7 @@ app.get('/updatepost/:id', (req, res) => {
 ---
 
 ### DELETE 
+
 ```js
 //Delete post
 app.get('/deletepost/:id', (req, res) => {
@@ -229,6 +289,7 @@ app.get('/deletepost/:id', (req, res) => {
     });
 })
 ```
+
 ![](img/2019-10-28-11-01-55.png)
 ---
 ![](img/2019-10-28-11-02-02.png)

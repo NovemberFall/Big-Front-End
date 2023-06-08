@@ -1,0 +1,119 @@
+## 非受控组件，收集表单中的数据
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1_非受控组件</title>
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		//创建组件
+		class Login extends React.Component{
+			render(){
+				return(
+					<form action="http://www.google.com" onSubmit={this.handleSubmit}>
+						用户名：<input ref={c => this.username = c} type="text" name="username"/>
+						密码：<input ref={c => this.password = c} type="password" name="password"/>
+						<button>登录</button>
+					</form>
+				)
+			}
+		}
+		//渲染组件
+		ReactDOM.render(<Login/>,document.getElementById('test'))
+	</script>
+</body>
+</html>
+```
+
+![](img/2021-01-12-01-04-10.png)
+
+![](img/2021-01-12-01-04-45.png)
+
+---
+
+## 非受控组件，现用现取
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1_非受控组件</title>
+</head>
+<body>
+	<!-- 准备好一个“容器” -->
+	<div id="test"></div>
+	
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom，用于支持react操作DOM -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel，用于将jsx转为js -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		//创建组件
+		class Login extends React.Component{
+			handleSubmit = (event)=>{
+				event.preventDefault() //阻止表单提交
+				const {username,password} = this
+				alert(`你输入的用户名是：${username.value},你输入的密码是：${password.value}`)
+			}
+			render(){
+				return(
+					<form onSubmit={this.handleSubmit}>
+						用户名：<input ref={c => this.username = c} type="text" name="username"/>
+						密码：<input ref={c => this.password = c} type="password" name="password"/>
+						<button>登录</button>
+					</form>
+				)
+			}
+		}
+		//渲染组件
+		ReactDOM.render(<Login/>,document.getElementById('test'))
+	</script>
+</body>
+</html>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

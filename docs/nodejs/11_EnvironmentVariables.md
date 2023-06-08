@@ -1,9 +1,13 @@
 ## Serving Static Files(获取静态网页)
+
+
 ![](img/2019-12-20-11-08-17.png)
+
 - there is no way directly get the static .html 
 - if we want to get the static file system
 - using express
-- update app2.js
+- update `app2.js`
+
 ```js
 //serving static files
 const express = require('express');
@@ -39,12 +43,17 @@ app.use('/api/v1/users', userRouter);
 module.exports = app;   
 
 ```
+
 ![](img/2019-12-20-11-18-47.png)
+
 - remember, for here we just server from a folder and not from a route.
+
 ---
 
 ## Environment Variables
-- update server.js
+
+- update `server.js`
+
 ```js
 //Environment Variables
 const app = require('./app2');
@@ -57,32 +66,54 @@ app.listen(port, () => {
     console.log(`${__dirname}`)
 });
 ```
+
 - console
+
 ![](img/2019-12-20-11-39-25.png)
+
 - we see development
 - To summary, environment variables are global variables
+
 ----
-- server.js
+
+- `server.js`
+
+
 ```js
 console.log(process.env);
 ```
+
 ![](img/2019-12-20-11-42-19.png)
+
 - for here, we have a bunch of different variables
 
+
 ### set a environment variable 
+
 - `NODE_ENV=development X=23 nodemon server.js `
+
 ![](img/2019-12-20-11-54-25.png)
+
 ---
 
-## Create a config.env
+## Create a `config.env`
+
+
 ![](img/2019-12-20-11-51-29.png)
+
 - btw, we can install a plugin: `DotENV`
+
 ![](img/2019-12-20-11-57-24.png)
+
 - so now we have syntax highlighting
 
+
 ### now install `dotenv`
+
 ![](img/2019-12-20-12-00-00.png)
-- now we config environment variable in server.js
+
+- now we config environment variable in `server.js`
+
 ```js
 //Environment Variables
 const dotenv = require('dotenv');
@@ -102,14 +133,19 @@ app.listen(port, () => {
     console.log(`${__dirname}`)
 });
 ```
-- update config.env
+
+- update `config.env`
+
 ![](img/2019-12-20-12-14-20.png)
 
 - run `npm start`, since we configed in package.json
+
 ![](img/2019-12-20-12-08-58.png)
 
 - now we hope that `dotenv.config({ path: './config.env' });` happens onec
-- in app2.js
+
+- in `app2.js`
+
 ```js
 //Environment Variables
 const express = require('express');
@@ -126,9 +162,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 ```
+
 ---
 
-### update server.js
+### update `server.js`
+
 ```js
 //Environment Variables
 const dotenv = require('dotenv');
@@ -148,7 +186,10 @@ app.listen(port, () => {
     console.log(`${__dirname}`)
 });
 ```
-### update app2.js
+
+
+### update `app2.js`
+
 ```js
 //Environment Variables
 const express = require('express');
@@ -189,7 +230,8 @@ module.exports = app;
 
 ```
 
-### update package.json
+### update `package.json`
+
 ```json
 {
   "name": "natours",
@@ -210,8 +252,13 @@ module.exports = app;
   }
 }
 ```
+
 - `npm run start:prod`
+
 ![](img/2019-12-20-13-30-20.png)
+
 ---
+
 - `npm run start:dev`
+
 ![](img/2019-12-20-13-33-30.png)

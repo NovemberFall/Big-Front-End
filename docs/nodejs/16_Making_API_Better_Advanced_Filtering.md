@@ -1,5 +1,8 @@
 ## Making the API Better: Advanced Filtering
-- updte tourController.js
+
+- updte `tourController.js`
+
+
 ```js
 //Making the API Better: Advanced Filtering
 const Tour = require('./../models/tourModel');
@@ -129,18 +132,25 @@ exports.deleteTour = async (req, res) => {
     }
 };
 ```
+
 - try to send GET request
+
 ![](img/2019-12-27-17-18-27.png)
+
 - we see there are three results
 
 - then, we try to see satisfy condition price<= 1500
+
 ![](img/2019-12-27-17-21-27.png)
+
 - only two results
 
 ---
 
 ## Making the API Better: Sorting
-- tourController.js
+
+- `tourController.js`
+
 ```js
 //Making the API Better: Sorting
 const Tour = require('./../models/tourModel');
@@ -276,11 +286,15 @@ exports.deleteTour = async (req, res) => {
     }
 };
 ```
+
 - now let's send http request for sorting
+
 ![](img/2019-12-27-19-22-18.png)
+
 - now the price sorting by ascending order
 -
-- update tourController.js
+- update `tourController.js`
+
 ```js
 //Making the API Better: Sorting
 const Tour = require('./../models/tourModel');
@@ -424,7 +438,8 @@ exports.deleteTour = async (req, res) => {
 
 ## Making the API Better: Limiting
 
-- update tourController.js
+- update `tourController.js`
+
 ```js
 //Making the API Better: Limiting
 const Tour = require('./../models/tourModel');
@@ -572,7 +587,9 @@ exports.deleteTour = async (req, res) => {
     }
 };
 ```
-- update tourModel.js
+
+- update `tourModel.js`
+
 ```js
     createdAt: {
         type: Date,
@@ -580,8 +597,10 @@ exports.deleteTour = async (req, res) => {
         select: false
     },
 ```
+
 - `select: false`
 - 
 - send the request
+
 ![](img/2019-12-28-10-40-52.png)
 ---

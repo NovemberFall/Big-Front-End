@@ -1,13 +1,20 @@
 ## Intro to Back-End Architecture(建筑学): MVC, Types of Logic, and More
+
 ![](img/2019-12-24-15-46-05.png)
+
 ![](img/2019-12-24-15-55-25.png)
+
 ---
 
 
 ## Refactoring for MVC
+
 - create a new folder
+
 ![](img/2019-12-24-17-11-01.png)
-- tourModels.js
+
+- `tourModels.js`
+
 ```js
 const mongoose = require('mongoose');
 const tourSchema = new mongoose.Schema({
@@ -28,7 +35,11 @@ const tourSchema = new mongoose.Schema({
 const Tour = mongoose.model('Tour', tourSchema);
 module.exports = Tour;
 ```
-- update tourRoutes.js
+
+---
+
+- update `tourRoutes.js`
+
 ```js
 const express = require('express');
 
@@ -59,7 +70,11 @@ router.route('/:id')
 
 module.exports = router;
 ```
-- update tourController.js
+
+---
+
+- update `tourController.js`
+
 ```js
 const Tour = require('./../models/tourModel');
 
@@ -130,7 +145,11 @@ exports.deleteTour = (req, res) => {
     });
 };
 ```
-- update server.js
+
+---
+
+- update `server.js`
+
 ```js
 //Refactoring for MVC
 const mongoose = require('mongoose');
@@ -156,10 +175,13 @@ app.listen(port, () => {
     console.log(`${__dirname}`)
 });
 ```
+
 ---
 
 ## Another Way of Creating Documents
-- update tourController.js
+
+- update `tourController.js`
+
 ```js
 
 //Another Way of Creating Documents
@@ -255,19 +277,28 @@ exports.deleteTour = (req, res) => {
     });
 };
 ```
+
 - let's testing .http
+
 ![](img/2019-12-24-17-51-37.png)
+
 - now you might notice that we have no difficulty and no duration 
+
 - that's because that are actually not in our schema is simply ignored.
 - 
 - now we try to send again? to see what happen?
+
 ![](img/2019-12-24-18-32-40.png)
+
 - because we already have the Test Tour 2, And so it coould not create another one
+
 ![](img/2019-12-24-18-35-51.png)
 ---
 
 ## Reading Documents
-- update tourController.js
+
+- update `tourController.js`
+
 ```js
 //Reading Documents
 const Tour = require('./../models/tourModel');
@@ -292,8 +323,11 @@ exports.getAllTours = async (req, res) => {
     }
 };
 ```
+
 ![](img/2019-12-24-19-11-39.png)
+
 - get one Tour
+
 ```JS
 exports.getTour = async (req, res) => {
     try {
@@ -314,12 +348,16 @@ exports.getTour = async (req, res) => {
     }
 };
 ```
+
 ![](img/2019-12-24-19-40-44.png)
+
 ---
 
 
 ## Updating Document
-- tourController.js
+
+- `tourController.js`
+
 ```js
 exports.updateTour = async (req, res) => {
     try {
@@ -341,20 +379,30 @@ exports.updateTour = async (req, res) => {
     }
 };
 ```
+
 - since we have `runValidators: true`, thus if insert a data with different type, what happen?
+
 ![](img/2019-12-24-21-18-29.png)
+
 ---
 -
 - change to Number
+
 ![](img/2019-12-24-21-19-13.png)
+
 ---
 
 ## Deleting Documents
+
 - create a document for testing
+
 ![](img/2019-12-25-13-49-52.png)
 ![](img/2019-12-25-13-50-12.png)
+
 ---
+
 - now let's delete it
+
 ![](img/2019-12-25-13-53-24.png)
 ![](img/2019-12-25-13-56-12.png)
 ---

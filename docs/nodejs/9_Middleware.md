@@ -1,6 +1,8 @@
 ## param Middleware
+
 - print out `id`
-- tourRoutes.js
+- `tourRoutes.js`
+
 ```js
 //2ND way, is similar to React.js
 const express = require('express');
@@ -25,12 +27,16 @@ router.route('/:id')
 
 module.exports = router;
 ```
+
 ![](img/2019-12-19-16-50-52.png)
 ![](img/2019-12-19-16-51-09.png)
+
 ---
 
 ### since `id` is from param which is midlleware
-- update tourController.js
+
+- update `tourController.js`
+
 ```js
 //param ID is Middleware
 const fs = require('fs');
@@ -121,7 +127,9 @@ exports.deleteTour = (req, res) => {
 ```
 
 ---
-- update tourRoutes.js
+
+- update `tourRoutes.js`
+
 ```js
 //2ND way, is similar to React.js
 const express = require('express');
@@ -143,9 +151,14 @@ router.route('/:id')
 
 module.exports = router;
 ```
+
 - now let's test some invalid id
+
 ![](img/2019-12-19-17-19-10.png)
+
 - let's test valid id
+
 ![](img/2019-12-19-17-19-41.png)
+
 ---
 

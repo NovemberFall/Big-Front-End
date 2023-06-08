@@ -1,4 +1,5 @@
 ### import bootstrap
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +44,13 @@
 </body>
 </html>
 ```
+
 ---
 
-### create a customStyles.css
+### create a `customStyles.css`
+
 - update css
+
 ```css
 body{
     background-color: #eed773;
@@ -71,12 +75,15 @@ h1 {
     margin: 0 auto;
 }
 ```
+
 ---
 
 ### npm install node
+
 - `npm install node`
 
-- create a server.js
+- create a `server.js`
+
 ```js
 const http = require('http');
 const fs = require('fs');
@@ -101,11 +108,15 @@ server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`)
 });
 ```
+
 ![](img/2019-11-22-19-35-18.png)
+
 ---
 
 ### Connecting to Database
+
 ![](img/2019-11-22-19-47-21.png)
+
 ```sql
 CREATE TABLE `test`.`comments` (
   `ID` INT NOT NULL AUTO_INCREMENT,
@@ -116,19 +127,25 @@ CREATE TABLE `test`.`comments` (
 ```
 
 - insert data:
+
 ![](img/2019-11-22-19-57-51.png)
+
 ```sql
 INSERT INTO `comments` (`ID`, `userName`, `comment`, `date`) 
 VALUES (NULL, 'testUser_1', 'This is a test comment for user 1', '2019-11-01'), 
         (NULL, 'testUser_2', 'This is a test comment for user 2', '2019-11-07');
 ```
+
 ![](img/2019-11-22-20-02-35.png)
+
 ---
 
 - install mysql
+
 - `npm install mysql`
 
-- create a DBConnection.js
+- create a `DBConnection.js`
+
 ```js
 const mysql = require('mysql');
 
@@ -144,8 +161,11 @@ function getConnection() {
 
 module.exports.getConnection = getConnection;
 ```
+
 ---
-- update server.js
+
+- update `server.js`
+
 ```js
 const http = require('http');
 const fs = require('fs');
@@ -184,9 +204,13 @@ server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`)
 });
 ```
+
 ![](img/2019-11-22-21-33-57.png)
+
 ---
-- update serve.js
+
+- update `serve.js`
+
 ```js
         conn.query('SELECT * FROM test.comments', function (error, results, fields) {
             if (error) {
@@ -197,12 +221,16 @@ server.listen(port, hostname, () => {
             });
         });
 ```
+
 ![](img/2019-11-22-21-38-03.png)
+
 ---
 
 ### Load Comments From DataBase(Ajax)
 
-- updating index.html
+
+- updating `index.html`
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -219,7 +247,9 @@ server.listen(port, hostname, () => {
     <div class="container">
             <h1>Weclome</h1>
 ```
-- update server.js
+
+- update `server.js`
+
 ```js
 const http = require('http');
 const fs = require('fs');
@@ -273,7 +303,9 @@ const server = http.createServer((req, res) => {
     }
 });
 ```
-- create functions.js
+
+- create `functions.js`
+
 ```js
 function loadComments() {
     var xhttp = new XMLHttpRequest();
@@ -314,7 +346,11 @@ function loadComments() {
     xhttp.send();
 }
 ```
+
 - run on serve
+
 - `node server.js`
+
 ![](img/2019-11-22-22-54-25.png)
+
 ---
