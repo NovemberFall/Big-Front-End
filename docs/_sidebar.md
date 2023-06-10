@@ -1,5 +1,3 @@
-* [Chapter1：HTML/CSS](ch1/htmlIntroduction.md)
-
 -----
 * [Chapter2：JS project 中文教程](ch2/jsIntro.md)
     * [canvas_music_visualization](ch2/intro.md)
@@ -20,11 +18,6 @@
     * [movie ticket booking app](mvTicketBooking/intro.md)
         * [1. index.htm & css style](mvTicketBooking/htmlCss.md)
         * [2. seats nums & data update](mvTicketBooking/seatNum.md)
-
------
-* [Chapter3：jQuery](ch3/jqIntro.md)
-    * [AwesomeToDolist](ch3/asTodo.md)
-    * [ToDolist](ch3/Todo.md)
 
 -----
 * [React 中文教程 PartA](ch5/reactIntro.md)
@@ -128,64 +121,3 @@
     * [1. React Cooperating with Redux](ch5-3/reactRedux.md)
 
 -----
-* [Chapter6：Vue](ch6/cssIntro.md)
-    * [Vue JS2 Tutorial](ch6/intro.md)
-        * [1. Instance](ch6/instance.md)
-        * [2. Data | Method](ch6/data.md)
-        * [3. Data Binding](ch6/binding.md)
-        * [4. Events](ch6/event.md)
-        * [5. Event Modifiers](ch6/eventModi.md)
-    * [chat-firebase](ch6/chat.md)
-        * [1. online-chat](ch6/onlineChat.md)
-
------
-* [Chapter7：Node.js](nodejs/intro.md)
-    * [Introduction](nodejs/introduce.md)
-    * [1. read write file](nodejs/1_readWriteFile.md)
-    * [2. create simple web server](nodejs/2_createSimpleWebServer.md)
-    * [3. build simple API](nodejs/3_buildSimpleAPI.md)
-    * [6. building API](nodejs/6_building_API.md)
-    * [7. building API](nodejs/7_building_API.md)
-    * [8. building API](nodejs/8_building_API.md)
-    * [9. Middleware](nodejs/9_Middleware.md)
-    * [10. Chaining Multiple Middleware](nodejs/10_Chaining_Multiple_Middleware.md)
-    * [11. Environment Variables](nodejs/11_EnvironmentVariables.md)
-    * [12. MongoDB](nodejs/12_MongoDB.md)
-    * [13. MongoDB Mongoose](nodejs/13_MongoDB_Mongoose.md)
-    * [14. Refactoring for MVC](nodejs/14_Refactoring_for_MVC.md)
-    * [15. Modelling final Version Tours](nodejs/15_Modelling_finalVersion_Tours.md)
-    * [16. Making API better Advanced Filtering](nodejs/16_Making_API_Better_Advanced_Filtering.md)
-    * [nodejs Connect MySQL](nodejs/nodejsConnectMySQL.md)
-    * [nodeJs MySQL ](nodejs/nodeJsMysql.md)
-
------
-* [Chapter8：RESTful API](ch8/restApi.md)
-
------
-* [Chapter9：Electron React Cloud](ch9/intro.md)
-    * [Cross-Platform-Desktop Online Markdown](ch9/cpdomIntro.md)
-        * [1. Process Thread](ch9/process-thread.md)
-        * [2. Create desktop app](ch9/createDesktopApp.md)
-        * [3. Interprocess Communication](ch9/IC.md)
-        * [4. remote module](ch9/RM.md)
-        * [5. Reat Hook useEffect](ch9/CRE.md)
-            * [useState Hook](ch9/useState.md)
-            * [useEffect don't need to remove](ch9/useEffectNoRemove.md)
-            * [useEffect need to remove](ch9/useEffectToRemove.md)
-            * [useEffect may control](ch9/canControl.md)
-            * [Customize Hook](ch9/CustomizeHook.md)
-            * [HOC concept](ch9/HOC.md)
-            * [Customize2 Hook](ch9/CustomizeHook2.md)
-            * [Hook Rule](ch9/hookRule.md)
-        * [6. Global Demand](ch10/intro.md)
-            * [Config develop environment](ch10/devEnv.md)
-            * [Config develop environment 2](ch10/devEnv2.md)
-            * [file organization](ch10/organization.md)
-        * [7. Left navigation bar develop](ch11/intro.md)
-            * [import bootstrap library](ch11/bootstrap.md)
-            * [FileSearch Component 1](ch11/fileSearch1.md)
-            * [FileSearch Component 2](ch11/fileSearch2.md)
-
------
-* [Chapter10：Angular](angular/intro.md)
-    * [Angular2 | Project Set Up](angular/version.md)
